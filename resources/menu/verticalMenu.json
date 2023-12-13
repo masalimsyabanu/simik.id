@@ -1,0 +1,92 @@
+{
+  "menu": [
+    {
+      "url": "/dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "pages-home"
+    },
+    {
+      "url": "/dashboard/page-2",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "name": "Data Guru",
+      "slug": "data-guru"
+    },
+    {
+      "url": "/dashboard/page-2",
+      "icon": "menu-icon tf-icons ti ti-users",
+      "name": "Data Orang Tua Murid",
+      "slug": "data-orang-tua-murid"
+    },
+    {
+      "url": "/dashboard/page-2",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "name": "Data Murid",
+      "slug": "data-murid"
+    },
+    {
+      "url": "/dashboard/blog",
+      "icon": "menu-icon tf-icons ti ti-article",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "name": "Konten Website",
+      "icon": "menu-icon tf-icons ti ti-files",
+      "slug": "front-pages",
+      "submenu": [
+        {
+          "url": "front-pages/landing",
+          "name": "Slider",
+          "slug": "front-pages-landing",
+          "target": "_blank"
+        },
+        {
+          "url": "front-pages/pricing",
+          "name": "Visi Misi",
+          "slug": "front-pages-pricing",
+          "target": "_blank"
+        },
+        {
+          "url": "front-pages/payment",
+          "name": "Ekstrakulikuler",
+          "slug": "front-pages-payment",
+          "target": "_blank"
+        },
+        {
+          "url": "front-pages/checkout",
+          "name": "Testimoni",
+          "slug": "front-pages-checkout",
+          "target": "_blank"
+        },
+        {
+          "url": "front-pages/help-center",
+          "name": "Help Center",
+          "slug": "front-pages-help-center",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "url": "pages/misc-error",
+      "name": "Error",
+      "icon": "menu-icon tf-icons ti ti-alert-triangle",
+      "slug": "pages-misc-error",
+      "target": "_blank"
+    },
+    {
+      "url": "auth/login-basic",
+      "name": "Login",
+      "icon": "menu-icon tf-icons ti ti-login",
+      "slug": "auth-login-basic",
+      "target": "_blank"
+    },
+    {
+      "url": "auth/register-basic",
+      "name": "Register",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "slug": "auth-register-basic",
+      "target": "_blank"
+    }
+  ]
+}
