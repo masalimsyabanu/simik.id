@@ -95,12 +95,7 @@ $configData = Helper::appClasses();
       <div class="card mb-4">
         <h5 class="card-header">Konten</h5>
         <div class="card-body">
-
-            <div>
-
               <textarea id="summernote" name="konten"> </textarea>
-            </div>
-
             <hr>
             <button type="button" onclick="window.history.back()"  class="btn-sm btn btn-secondary">Kembali</button>
             <button type="submit" class="btn btn-sm btn-success">{{$button}}</button>
@@ -121,7 +116,7 @@ $configData = Helper::appClasses();
 
 <script>
   $('#summernote').summernote({
-    placeholder: 'Hello Bootstrap 5',
+    placeholder: 'Isi Konten Blog Disini',
     tabsize: 2,
     height: 200
   });
