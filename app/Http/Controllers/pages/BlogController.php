@@ -193,6 +193,7 @@ class BlogController extends Controller
     $title = $blog->judul;
 
     $blog->delete();
+    // $blog->dd();
 
     return redirect()
       ->route('dashboard.blog')
