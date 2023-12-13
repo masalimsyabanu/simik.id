@@ -11,6 +11,11 @@ $configData = Helper::appClasses();
 <p>For more layout options refer <a href="{{ config('variables.documentation') ? config('variables.documentation').'/laravel-introduction.html' : '#' }}" target="_blank" rel="noopener noreferrer">documentation</a>.</p>
 @endsection --}}
 
+@section('page-style')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+@endsection
+
 @section('content')
 
 <h4 class="py-3 mb-4">
@@ -73,8 +78,8 @@ $configData = Helper::appClasses();
           <div>
             <label for="status" class="form-label">Status</label>
             <select name="status" id="status" class="form-control @error('status') {{'is-invalid'}} @enderror" value="{{ old('status') ?? $blog->status ?? ''}}">
-                <option @if($blog->status == 'aktif') {{'selected'}}  @endif value="aktif">Aktif</option>
-                <option @if($blog->status == 'nonaktif') {{'selected'}}  @endif value="nonaktif">Nonaktif</option>
+                <option @if(isset($blog->status) == 'aktif') {{'selected'}} @endif value="aktif">Aktif</option>
+                <option @if(isset($blog->status) == 'nonaktif') {{'selected'}}  @endif value="nonaktif">Nonaktif</option>
             </select>
             @error('status')
                 <span class="text-danger">
@@ -91,9 +96,10 @@ $configData = Helper::appClasses();
         <h5 class="card-header">Konten</h5>
         <div class="card-body">
 
-             <textarea id="full-editor" name="konten">
-              {!! $blog->konten !!}
-             </textarea>
+            <div>
+
+              <textarea id="summernote" name="konten"> </textarea>
+            </div>
 
             <hr>
             <button type="button" onclick="window.history.back()"  class="btn-sm btn btn-secondary">Kembali</button>
@@ -108,5 +114,16 @@ $configData = Helper::appClasses();
 @endsection
 
 @section('page-script')
-<script src="{{ asset(mix('assets/js/forms-editors.js')) }}"></script>
+{{-- <script src="{{ asset(mix('assets/js/forms-editors.js')) }}"></script> --}}
+{{-- <script src="summernote-bs5.js"></script> --}}
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Hello Bootstrap 5',
+    tabsize: 2,
+    height: 200
+  });
+</script>
 @endsection
