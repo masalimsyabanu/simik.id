@@ -4,7 +4,7 @@ namespace App\Http\Controllers\front_pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Models\CalonMurid;
+use App\Models\CalonMurid;
 use Validator;
 
 

@@ -17,9 +17,9 @@
               </div>
               <div class="col-lg-7 col-xl">
                   <div class="error-content">
-                      <h1 class="error-number">404</h1>
-                      <h2 class="error-title">Terima Kasih</h2>
-                      <p class="error-text">Data formulir berhasil dikirim.</p>
+                      <h1 class="error-number">Terima Kasih</h1>
+                      <h2 class="error-title">Pendaftaran Tahap Awal Berhasil</h2>
+                      <p class="error-text">Tunggu tim SIMIK japri melalui WA untuk mengarahkan tahap pendaftaran kedua.</p>
                       <form action="#" class="search-inline">
                           {{-- <input type="text" class="form-control" placeholder="Search Keyword...."> --}}
                           {{-- <button><i class="far fa-search"></i></button> --}}
