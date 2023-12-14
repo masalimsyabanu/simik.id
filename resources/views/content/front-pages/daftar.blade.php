@@ -24,19 +24,19 @@ Contact Area
                   <div class="col-sm-6">
                       <div class="list-style1">
                           <ul class="list-unstyled mb-0">
-                              <li>Assign practice exercises</li>
-                              <li>Track student progress</li>
+                              <li>Pendaftaran dimulai 15 Desember 2023 sampai dengan 29 Februari 2024</li>
+                              <li>Waktu pendaftaran mulai pukul 08:00 - 14:00 WIB</li>
                           </ul>
                       </div>
                   </div>
-                  <div class="col-sm-6">
+                  {{-- <div class="col-sm-6">
                       <div class="list-style1">
                           <ul class="list-unstyled">
                               <li>Videos and articles</li>
                               <li>Join millions of students</li>
                           </ul>
                       </div>
-                  </div>
+                  </div> --}}
               </div>
               <form action="{{route('home.daftar')}}" method="POST" class="form-style3">
                 @csrf
@@ -87,7 +87,7 @@ Contact Area
                           @enderror
                       </div>
                       <div class="col-md-6 form-group">
-                          <label>Nomor Handphone</label>
+                          <label>Nomor Handphone</label> <span class="required">(Wajib Diisi)</span></label>
                           <input type="number" name="nomor_hp" class="@error('nomor_hp') {{'is-invalid'}} @enderror">
                           @error('nomor_hp')
                               <span class="text-danger">

@@ -4,7 +4,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col col-sm-auto">
                     <div class="header-logo">
-                        <a href="index.html">
+                        <a href="{{route('home.index')}}">
                             <img src="{{asset('logo/logo-simik.jpg')}}" style="width: 100px" alt="logo">
                         </a>
                     </div>
@@ -25,7 +25,8 @@
                             </div>
                         </div>
                         <div class="col-auto ">
-                            <a href="#" class="vs-btn sideMenuToggler">Pendaftaran</a>
+                            {{-- <a href="{{route('home.daftar')}}" class="vs-btn sideMenuToggler">Pendaftaran</a> --}}
+                            <a href="{{route('home.daftar')}}" class="vs-btn">Pendaftaran</a>
                         </div>
                     </div>
                 </div>

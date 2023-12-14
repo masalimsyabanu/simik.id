@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front_pages;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Models\DataOrangtua;
+use Validator;
 
 
 class PendaftaranController extends Controller
@@ -37,12 +38,15 @@ class PendaftaranController extends Controller
           'nama_orangtua' => ['required', 'string'],
           'tgl_lahir_anak' => ['required'],
           'alamat' => ['required'],
+          'email' => ['required'],
           'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
 
         $messages = [
+          'email.required' => 'Email wajib diisi',
           'nama_anak.required' => 'Nama anak wajib diisi',
           'nama_orangtua.required' => 'Nama anak wajib diisi',
+          'nomor_hp.required' => 'Nomor handphone wajib diisi',
           'nomor_hp.regex' => 'Format nomor handphone salah. Contoh: 6282273318016',
           'nomor_hp.max' => 'Nomor handphone maksimal 13 digit',
           'tgl_lahir_anak.required' => 'Tanggal lahir anak wajib diisi',

@@ -33,7 +33,7 @@
                     <div class="widget footer-widget">
                         <div class="widget-about">
                             <div class="footer-logo"><img src="{{asset('logo/logo-simik.jpg')}}" style="width: 150px" alt="Maktab Ibnu Khaldun"></div>
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero magni nostrum, mollitia illum doloribus provident similique! Provident qui assumenda magni! Quo accusamus nesciunt quod velit cumque, aspernatur non? Nesciunt!</p>
+                            <p class="mb-0">Sekolah Islam "Maktab" Setingkat TK-SD Berbahasa Arab Terbaik di Indonesia dengan Biaya Wakaf</p>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="widget footer-widget">
                         <h3 class="widget_title">Alamat</h3>
                         <div class="vs-widget-about">
-                            <p class="map-link mb-2 pb-1">#</p>
+                            <p class="map-link mb-2 pb-1">Jl. Murai No. 139E Sei Sikambing B, Medan, Sumatera Utara</p>
                             <p class="footer-call"><a class="text-inherit" href="tel:+6285260061002">+62 8526 0061 002</a></p>
                         </div>
                     </div>

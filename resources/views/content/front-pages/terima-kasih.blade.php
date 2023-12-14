@@ -9,7 +9,7 @@
 <!--==============================
     Error Area
     ==============================-->
-    <section class="vs-error-wrapper space-top space-extra-bottom" data-bg-src="assets/img/bg/error-bg.png">
+    <section class="vs-error-wrapper space-top space-extra-bottom" data-bg-src="{{asset('frontend/img/bg/error-bg.png')}}">
       <div class="container">
           <div class="row gx-100 text-center text-lg-start">
               <div class="col-lg-5 col-xl-auto">

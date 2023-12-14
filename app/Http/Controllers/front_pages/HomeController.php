@@ -12,12 +12,19 @@ class HomeController extends Controller
    */
   public function index()
   {
-    return view('content.front-pages.index');
+    // return view('content.front-pages.index');
+
+    return redirect()->route('home.informasi');
   }
 
   public function terimaKasih(){
 
     return view('content.front-pages.terima-kasih');
+  }
+
+  public function informasi(){
+
+    return view('content.front-pages.informasi');
   }
 
   /**

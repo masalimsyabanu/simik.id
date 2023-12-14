@@ -25,6 +25,7 @@ use App\Http\Controllers\front_pages\PendaftaranController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/terima-kasih', [HomeController::class, 'terimaKasih'])->name('home.terima-kasih');
+Route::get('/informasi', [HomeController::class, 'informasi'])->name('home.informasi');
 Route::get('/daftar', [PendaftaranController::class, 'index'])->name('home.daftar');
 Route::post('/daftar', [PendaftaranController::class, 'store'])->name('home.daftar.store');
 
