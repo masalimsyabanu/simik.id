@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-auto">
                     <div class="countdown-style1">
-                        <ul class="countdown-active" data-end-date="01/12/2024">
+                        <ul class="countdown-active" data-end-date="00/00/0000">
                             <li><span class="day"></span>Hari</li>
                             <li><span class="hour"></span>Jam</li>
                             <li><span class="minute"></span>Menit</li>
@@ -75,4 +75,4 @@
             </div>
         </div>
     </div>
-</footer> 
+</footer>

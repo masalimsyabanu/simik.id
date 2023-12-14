@@ -60,7 +60,7 @@
                                     <li><a href="blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                           
+
                             <li>
                                 <a href="#">Kontak Kami</a>
                             </li>

@@ -140,7 +140,7 @@ Hero Area
 
     </div>
 </section><!--==============================
-About Area  
+About Area
 ==============================-->
 <section class=" space-top space-extra-bottom">
     <div class="container">
@@ -148,7 +148,7 @@ About Area
             <div class="text-center text-xl-start col-lg-9 col-xl-8 col-xxl-9">
                 <div class="title-area">
                     <span class="sec-subtitle">#</span>
-                    <h2 class="sec-title">Sekolah Islam Maktab Ibnu Khaldu</h2>
+                    <h2 class="sec-title">Sekolah Islam Maktab Ibnu Khaldun</h2>
                 </div>
             </div>
             <div class="col-lg-8 col-xl-6 col-xxl-auto mb-md-3 mb-xl-0">
@@ -470,7 +470,7 @@ Team Area
     </svg>
 </div>
 <!--==============================
-Feature Area  
+Feature Area
 ==============================-->
 <section class=" space-extra-bottom">
     <div class="container">

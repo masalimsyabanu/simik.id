@@ -15,6 +15,11 @@ class HomeController extends Controller
     return view('content.front-pages.index');
   }
 
+  public function terimaKasih(){
+
+    return view('content.front-pages.terima-kasih');
+  }
+
   /**
    * Show the form for creating a new resource.
    */
