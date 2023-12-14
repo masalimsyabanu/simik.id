@@ -9,13 +9,13 @@
                         <div class="media-icon"><img src="{{asset('frontend/img/icon/cal-1-1.svg')}}" alt="icon"></div>
                         <div class="media-body">
                             <span class="media-label">Acara Mendatang</span>
-                            <p class="media-title"><a href="#" class="text-inherit">#</a></p>
+                            <p class="media-title"><a href="#" class="text-inherit">Pesta Bahasa Arab 2023</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-auto">
                     <div class="countdown-style1">
-                        <ul class="countdown-active" data-end-date="00/00/0000">
+                        <ul class="countdown-active" data-end-date="12/16/2023">
                             <li><span class="day"></span>Hari</li>
                             <li><span class="hour"></span>Jam</li>
                             <li><span class="minute"></span>Menit</li>

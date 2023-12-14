@@ -9,13 +9,13 @@
 <!--==============================
 Contact Area
 ==============================-->
-<section class=" bg-smoke " data-bg-src="frontend/img/bg/bg-con-1-1.png">
+<section class="bg-smoke mt-4 " data-bg-src="{{asset('frontend/img/bg/bg-con-1-1.png')}}">
   <div class="container">
       <div class="row">
           <div class="col-xl-auto col-xxl-6">
               <div class="img-box6">
-                  <div class="img-1 mega-hover"><img src="frontend/img/about/con-1-1.jpg" alt="image"></div>
-                  <div class="img-2 mega-hover"><img src="frontend/img/about/con-1-2.jpg" alt="image"></div>
+                  <div class="img-1 mega-hover"><img src="{{asset('frontend/img/about/con-1-1.jpg')}}" alt="image"></div>
+                  <div class="img-2 mega-hover"><img src="{{asset('frontend/img/about/con-1-2.jpg')}}" alt="image"></div>
               </div>
           </div>
           <div class="col-xl col-xxl-6 align-self-center">
@@ -69,7 +69,7 @@ Contact Area
                           @enderror
                       </div>
                       <div class="col-md-6 form-group">
-                          <label>Alamat Lengkap<span class="required">(Wajib Diisi)</span></label>
+                          <label>Alamat<span class="required">(Wajib Diisi)</span></label>
                           <input type="text" class="@error('alamat') {{'is-invalid'}} @enderror" name="alamat">
                           @error('alamat')
                               <span class="text-danger">
@@ -78,7 +78,7 @@ Contact Area
                           @enderror
                       </div>
                       <div class="col-md-6 form-group">
-                          <label>Email <span class="required">(Wajib Diisi)</span></label>
+                          <label>Email</label>
                           <input type="email" class="@error('email') {{'is-invalid'}} @enderror" name="email">
                           @error('email')
                               <span class="text-danger">
@@ -87,8 +87,9 @@ Contact Area
                           @enderror
                       </div>
                       <div class="col-md-6 form-group">
-                          <label>Nomor Handphone</label> <span class="required">(Wajib Diisi)</span></label>
+                          <label>No WA</label><span class="required">(Wajib Diisi)</span></label>
                           <input type="number" name="nomor_hp" class="@error('nomor_hp') {{'is-invalid'}} @enderror">
+                          {{-- <small>*Cth : 628227311xxx</small> --}}
                           @error('nomor_hp')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -96,8 +97,8 @@ Contact Area
                           @enderror
                       </div>
                       <div class="col-auto align-self-center form-group">
-                          <input type="checkbox" id="notice" name="notice">
-                          <label for="notice">Saya berkomitmen mendaftarkan anak saya</label>
+                          <input type="checkbox" id="notice">
+                          <label for="notice">Saya bersedia men-save nomor WA admin SIMIK ke dalam kontak saya.</label>
                       </div>
                       <div class="col-auto form-group">
                           <button class="vs-btn" type="submit">Daftar</button>
