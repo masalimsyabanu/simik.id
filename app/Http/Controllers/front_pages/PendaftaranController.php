@@ -4,7 +4,7 @@ namespace App\Http\Controllers\front_pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Models\DataOrangtua;
+use App\Http\Models\CalonMurid;
 use Validator;
 
 
@@ -38,12 +38,10 @@ class PendaftaranController extends Controller
           'nama_orangtua' => ['required', 'string'],
           'tgl_lahir_anak' => ['required'],
           'alamat' => ['required'],
-          'email' => ['required'],
           'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
 
         $messages = [
-          'email.required' => 'Email wajib diisi',
           'nama_anak.required' => 'Nama anak wajib diisi',
           'nama_orangtua.required' => 'Nama anak wajib diisi',
           'nomor_hp.required' => 'Nomor handphone wajib diisi',
@@ -55,7 +53,7 @@ class PendaftaranController extends Controller
 
         $validator = Validator::make($input, $rules, $messages)->validate();
 
-        $data_orangtua = DataOrangTua::create(
+        $calon_murid = CalonMurid::create(
           [
             'nama_anak' => $request->nama_anak,
             'nama_orangtua' => $request->nama_orangtua,

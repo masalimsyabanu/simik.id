@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_orangtua', function (Blueprint $table) {
+        Schema::create('calon_murid', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_anak');
-            $table->string('tgl_lahir_anak');
-            $table->string('nama_orangtua');
-            $table->string('email');
-            $table->string('nomor_hp');
-            $table->string('alamat');
+            $table->string('nama_anak')->nullable();
+            $table->string('tgl_lahir_anak')->nullable();
+            $table->string('nama_orangtua')->nullable();
+            $table->string('email')->nullable();
+            $table->string('nomor_hp')->nullable();
+            $table->string('alamat')->nullable();
             $table->timestamps();
         });
     }
