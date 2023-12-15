@@ -13,7 +13,7 @@
       "slug": "users-management"
     },
     {
-      "url": "/dashboard/blog",
+      "url": "/dashboard/calon-murid",
       "icon": "menu-icon tf-icons ti ti-user",
       "name": "Calon Murid",
       "slug": "calon-murid"

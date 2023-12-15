@@ -7,6 +7,7 @@ use App\Http\Controllers\pages\Page2;
 use App\Http\Controllers\pages\MiscError;
 use App\Http\Controllers\pages\BlogController;
 use App\Http\Controllers\pages\UserController;
+use App\Http\Controllers\pages\CalonMuridController;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 
@@ -58,6 +59,9 @@ Route::prefix('dashboard')->name('dashboard.')->namespace('Dashboard')->group(fu
     Route::get('/users/{user}', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('user.delete');
+
+    Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
+    // Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
   });
 
 // Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
