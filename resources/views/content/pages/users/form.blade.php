@@ -14,7 +14,7 @@ $configData = Helper::appClasses();
 @section('content')
 
 <h4 class="py-3 mb-4">
-    <span class="text-muted fw-light">User Management /</span> {{$button}} Artikel
+    <span class="text-muted fw-light">User Management /</span> {{$button}} User
   </h4>
 
   <div class="row">
@@ -53,13 +53,53 @@ $configData = Helper::appClasses();
 
           <div>
             <label for="" class="form-label">Username</label>
-            <input type="text" value="{{$user->penulis ?? ''}}" name="username" id="" placeholder="Nama pengguna/username user" class="form-control @error('username') {{'is-invalid'}} @enderror">
+            <input type="text" value="{{$user->username ?? ''}}" name="username" id="" placeholder="Nama pengguna/username user" class="form-control @error('username') {{'is-invalid'}} @enderror">
             @error('username')
                 <span class="text-danger">
                     <strong>{{$message}}</strong>
                 </span>
             @enderror
           </div>
+
+          <div>
+            <label for="" class="form-label">Email</label>
+            <input type="email" value="{{$user->email ?? ''}}" name="email" id="" placeholder="Email user" class="form-control @error('email') {{'is-invalid'}} @enderror">
+            @error('email')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+
+          <div class="form-password-toggle">
+            <label for="" class="form-label">Password</label>
+            <div class="input-group">
+              <input type="password" name="password" value="{{$user->password ?? ''}}" class="form-control @error('password') {{'is-invalid'}} @enderror" id="basic-default-password32" placeholder="············" aria-describedby="basic-default-password">
+              <span class="input-group-text cursor-pointer" id="basic-default-password"><i class="ti ti-eye-off"></i></span>
+
+          </div>
+                @error('password')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+
+          <div>
+            <label for="status" class="form-label">Role</label>
+            <select name="roles" id="roles" class="form-control @error('roles') {{'is-invalid'}} @enderror" value="{{ old('roles') ?? $user->roles ?? ''}}">
+                <option @if(isset($user->roles) == 'guest') {{'selected'}} @endif value="guest">Guest</option>
+                <option @if(isset($user->roles) == 'editor') {{'selected'}}  @endif value="editor">Editor</option>
+                <option @if(isset($user->roles) == 'guru') {{'selected'}}  @endif value="guru">Guru</option>
+                <option @if(isset($user->roles) == 'admin') {{'selected'}}  @endif value="admin">Admin</option>
+            </select>
+            @error('roles')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+
 
           <div>
             <label for="status" class="form-label">Status</label>

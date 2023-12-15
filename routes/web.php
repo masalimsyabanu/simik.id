@@ -52,12 +52,12 @@ Route::prefix('dashboard')->name('dashboard.')->namespace('Dashboard')->group(fu
     Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
     Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete');
 
-    Route::get('/users', [UsersController::class, 'index'])->name('user');
-    Route::get('/users/tambah', [UsersController::class, 'create'])->name('user.create');
-    Route::post('/users', [UsersController::class, 'store'])->name('user.store');
-    Route::get('/users/{user}', [UsersController::class, 'edit'])->name('user.edit');
-    Route::put('/users/{user}', [UsersController::class, 'update'])->name('user.update');
-    Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('user.delete');
+    Route::get('/users', [UserController::class, 'index'])->name('user');
+    Route::get('/users/tambah', [UserController::class, 'create'])->name('user.create');
+    Route::post('/users', [UserController::class, 'store'])->name('user.store');
+    Route::get('/users/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('user.delete');
   });
 
 // Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

@@ -15,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('content.pages.users.index');
+        $daftar_user = User::get();
+
+        return view('content.pages.users.index', compact('daftar_user'));
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
     public function create(User $user)
     {
         $button = 'Simpan';
-        $url  = 'dashboard.users.store';
+        $url  = 'dashboard.user.store';
 
         return view('content.pages.users.form', compact('button', 'url'));
     }
@@ -37,14 +39,14 @@ class UserController extends Controller
         $input = $request->all();
 
         $rules = [
-          'name' => 'required',
+          'nama' => 'required',
           'email' => 'required|unique:users',
           'password' => 'required',
           'username' => 'required'
         ];
 
         $messages =[
-          'name.required' => 'Harus diisi',
+          'nama.required' => 'Harus diisi',
           'email.required' => 'Harus diisi',
           'email.unique' => 'Email sudah dipakai',
           'password.required' => 'Harus diisi',
@@ -54,15 +56,15 @@ class UserController extends Controller
         $validator = Validator::make($input, $rules, $messages)->validate();
 
         $users = User::create([
-          'name' => $request->name,
+          'nama' => $request->nama,
           'email' => $request->email,
-          'password' => $request->password,
+          'password' => Hash::make($request->password),
           'username' => $request->username,
           'roles' => $request->roles,
           'status' => $request->status,
         ]);
 
-        return redirect()->route('dashboard.user.index')
+        return redirect()->route('dashboard.user')
         ->with('messages', __('pesan.create', ['module' => $request->input('name')]));
     }
 

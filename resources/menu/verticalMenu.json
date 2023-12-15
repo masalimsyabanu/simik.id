@@ -7,6 +7,18 @@
       "slug": "pages-home"
     },
     {
+      "url": "/dashboard/users",
+      "icon": "menu-icon tf-icons ti ti-users",
+      "name": "Users Management",
+      "slug": "users-management"
+    },
+    {
+      "url": "/dashboard/blog",
+      "icon": "menu-icon tf-icons ti ti-user",
+      "name": "Calon Murid",
+      "slug": "calon-murid"
+    },
+    {
       "url": "/dashboard/page-2",
       "icon": "menu-icon tf-icons ti ti-user",
       "name": "Data Guru",
@@ -69,23 +81,9 @@
     },
     {
       "url": "pages/misc-error",
-      "name": "Error",
+      "name": "Profil Website",
       "icon": "menu-icon tf-icons ti ti-alert-triangle",
-      "slug": "pages-misc-error",
-      "target": "_blank"
-    },
-    {
-      "url": "auth/login-basic",
-      "name": "Login",
-      "icon": "menu-icon tf-icons ti ti-login",
-      "slug": "auth-login-basic",
-      "target": "_blank"
-    },
-    {
-      "url": "auth/register-basic",
-      "name": "Register",
-      "icon": "menu-icon tf-icons ti ti-user",
-      "slug": "auth-register-basic",
+      "slug": "profil-website",
       "target": "_blank"
     }
   ]

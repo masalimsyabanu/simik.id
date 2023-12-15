@@ -24,7 +24,7 @@ $configData = Helper::appClasses();
     <h5 class="card-header">Data User</h5>
 
     <div class="table-responsive text-nowrap">
-        <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>
+        <a href="{{route('dashboard.user.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>
       <table class="table">
         <thead>
           <tr>
@@ -37,33 +37,33 @@ $configData = Helper::appClasses();
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-          @foreach($daftar_blog as $blog)
+          @foreach($daftar_user as $user)
           <tr>
-          <td>{{$blog->judul}}</td>
-          <td>{{$blog->created_at}}</td>
+          <td>{{$user->nama}}</td>
+          <td>{{$user->username}}</td>
           {{-- <td>
               <span class="block-email">lori@example.com</span>
           </td> --}}
-          <td>{{$blog->penulis}}</td>
-          <td class="desc">Samsung S8 Black</td>
+          <td class="desc">{{$user->email}}</td>
+          <td>{{ucfirst($user->roles)}}</td>
           <td>
-              <span class="status--process">{{$blog->status}}</span>
+              <span class="status--process">{{ucfirst($user->status)}}</span>
           </td>
             <td>
-              <a href="{{route('dashboard.blog.edit', $blog->id)}}" class="btn btn-sm btn-success">Edit</a>
-              <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$blog->id}}">
+              <a href="{{route('dashboard.user.edit', $user->id)}}" class="btn btn-sm btn-success">Edit</a>
+              <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$user->id}}">
                 Hapus
               </button>
 
               <!-- Modal -->
-          <div class="modal fade" id="basicModal{{$blog->id}}" tabindex="-1" aria-hidden="true">
+          <div class="modal fade" id="basicModal{{$user->id}}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel1">Hapus Data</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{route('dashboard.blog.delete', $blog->id ?? '')}}" method="post">
+                <form action="{{route('dashboard.user.delete', $user->id ?? '')}}" method="post">
                 @csrf
                 @method('delete')
                   <div class="modal-body">
