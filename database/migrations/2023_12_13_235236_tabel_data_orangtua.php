@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('nomor_hp')->nullable();
             $table->string('alamat')->nullable();
+            $table->string('pas_foto')->nullable();
+            $table->string('metode_pembayaran')->nullable();
+            $table->string('bukti_transfer')->nullable();
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_orangtua');
+        Schema::dropIfExists('calon_murid');
     }
 };

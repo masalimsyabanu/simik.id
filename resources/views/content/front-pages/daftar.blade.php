@@ -14,8 +14,10 @@ Contact Area
       <div class="row">
           <div class="col-xl-auto col-xxl-6">
               <div class="img-box6">
-                  <div class="img-1 mega-hover"><img src="{{asset('frontend/img/about/con-1-1.jpg')}}" alt="image"></div>
-                  <div class="img-2 mega-hover"><img src="{{asset('frontend/img/about/con-1-2.jpg')}}" alt="image"></div>
+                  {{-- <div class="img-1 mega-hover"><img src="{{asset('frontend/img/about/con-1-1.jpg')}}" alt="image"></div>
+                  <div class="img-2 mega-hover"><img src="{{asset('frontend/img/about/con-1-2.jpg')}}" alt="image"></div> --}}
+                  <div class="img-1 mega-hover"><img src="{{asset('gallery/369976313_266641056308585_5990473093655764521_n.jpg')}}" style="width: 440px" alt="image"></div>
+                  <div class="img-2 mega-hover"><img src="{{asset('gallery/404770181_326955203610503_6004865518562258046_n.jpg')}}" style="width: 440px" alt="image"></div>
               </div>
           </div>
           <div class="col-xl col-xxl-6 align-self-center">
