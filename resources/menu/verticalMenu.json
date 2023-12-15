@@ -89,13 +89,7 @@
   ],
   "menuGuest": [
     {
-      "url": "/dashboard",
-      "name": "Dashboard",
-      "icon": "menu-icon tf-icons ti ti-smart-home",
-      "slug": "pages-home"
-    },
-    {
-      "url": "/dashboard/blog",
+      "url": "/dashboard/daftar-tahap-kedua",
       "icon": "menu-icon tf-icons ti ti-article",
       "name": "Pendaftaran Tahap kedua",
       "slug": "pendaftaran-tahap-kedua"

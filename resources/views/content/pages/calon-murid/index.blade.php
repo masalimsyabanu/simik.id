@@ -33,7 +33,7 @@ $configData = Helper::appClasses();
             <th>Nama Orang Tua</th>
             <th>Nomor WA</th>
             {{-- <th>Status</th> --}}
-            <th>Actions</th>
+            <th>Link Tahap Kedua</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
@@ -45,10 +45,10 @@ $configData = Helper::appClasses();
           <td>{{ucfirst($calon_murid->nomor_hp)}}</td>
 
             <td>
-              <a href="{{route('dashboard.user.edit', $calon_murid->id)}}" class="btn btn-sm btn-success">Edit</a>
-              <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$calon_murid->id}}">
-                Hapus
-              </button>
+              {{-- <a href="{{route('dashboard.user.edit', $calon_murid->id)}}" class="btn btn-sm btn-success">Edit</a> --}}
+              {{-- <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$calon_murid->id}}"> Hapus</button> --}}
+              <input type="text" class="form-control" value="/dashboard/daftar-tahap-kedua/{{$calon_murid->id}}" id="myInput">
+              <button class="btn btn-sm btn-secondary" type="button" onclick="myFunction()">Copy link</button>
 
               <!-- Modal -->
           <div class="modal fade" id="basicModal{{$calon_murid->id}}" tabindex="-1" aria-hidden="true">
@@ -81,4 +81,23 @@ $configData = Helper::appClasses();
   </div>
   <!--/ Basic Bootstrap Table -->
 
+@endsection
+
+@section('page-script')
+  <script>
+    function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+}
+  </script>
 @endsection

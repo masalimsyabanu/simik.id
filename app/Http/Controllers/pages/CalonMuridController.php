@@ -19,6 +19,14 @@ class CalonMuridController extends Controller
         return view('content.pages.calon-murid.index', compact('daftar_calon_murid'));
     }
 
+    public function daftarTahapKedua(CalonMurid $calon_murid)
+    {
+      $title = 'Pendaftaran Tahap Kedua';
+      $url = 'dashboard.calon-murid.tahap-kedua.update';
+      $button = 'Simpan';
+      return view('content.pages.calon-murid.daftar-kedua', compact('calon_murid','button', 'title', 'url'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

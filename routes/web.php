@@ -63,6 +63,9 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
 
     Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
     // Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
+
+    Route::get('/daftar-tahap-kedua/{calon_murid}', [CalonMuridController::class, 'daftarTahapKedua'])->name('calon-murid.tahap-kedua');
+    Route::post('/daftar-tahap-kedua/{calon_murid}', [CalonMuridController::class, 'daftarTahapKeduaStore'])->name('calon-murid.tahap-kedua.update');
   });
 
 // Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
