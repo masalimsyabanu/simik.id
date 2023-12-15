@@ -31,12 +31,14 @@ $configData = Helper::appClasses();
         <!-- Logo -->
         <div class="app-brand mb-4">
           <a href="{{url('/')}}" class="app-brand-link">
-            <span class="app-brand-logo demo">@include('_partials.macros',["height"=>20,"withbg"=>'fill: #fff;'])</span>
+            {{-- <span class="app-brand-logo demo">@include('_partials.macros',["height"=>20,"withbg"=>'fill: #fff;'])</span> --}}
+            <img src="{{asset('logo/logo-simik.jpg')}}" style="width: 50px" alt="">
           </a>
         </div>
         <!-- /Logo -->
-        <h3 class="mb-1">Welcome to {{config('variables.templateName')}}! 👋</h3>
-        <p class="mb-4">Please sign-in to your account and start the adventure</p>
+        {{-- <h3 class="mb-1">Selamat datang ke {{config('variables.templateName')}}! 👋</h3> --}}
+        <h3 class="mb-1">Selamat datang ke SIMIK! 👋</h3>
+        <p class="mb-4">Silahkan masuk untuk masuk ke dasbor</p>
 
         @if (session('status'))
         <div class="alert alert-success mb-1 rounded-0" role="alert">
@@ -101,17 +103,17 @@ $configData = Helper::appClasses();
         </div>
 
         <div class="d-flex justify-content-center">
-          <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
+          {{-- <a href="javascript:;" class="btn btn-icon btn-label-facebook me-3">
             <i class="tf-icons fa-brands fa-facebook-f fs-5"></i>
-          </a>
+          </a> --}}
 
           <a href="javascript:;" class="btn btn-icon btn-label-google-plus me-3">
             <i class="tf-icons fa-brands fa-google fs-5"></i>
           </a>
 
-          <a href="javascript:;" class="btn btn-icon btn-label-twitter">
+          {{-- <a href="javascript:;" class="btn btn-icon btn-label-twitter">
             <i class="tf-icons fa-brands fa-twitter fs-5"></i>
-          </a>
+          </a> --}}
         </div>
       </div>
     </div>
