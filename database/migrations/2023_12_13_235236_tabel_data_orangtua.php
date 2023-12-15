@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('calon_murid', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('nama_anak')->nullable();
             $table->string('tgl_lahir_anak')->nullable();
             $table->string('nama_orangtua')->nullable();
@@ -22,7 +24,6 @@ return new class extends Migration
             $table->string('pas_foto')->nullable();
             $table->string('metode_pembayaran')->nullable();
             $table->string('bukti_transfer')->nullable();
-            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

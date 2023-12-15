@@ -38,7 +38,7 @@ class PendaftaranController extends Controller
           'nama_orangtua' => ['required', 'string'],
           'tgl_lahir_anak' => ['required'],
           'alamat' => ['required'],
-          'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
+          'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^628)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
 
         $messages = [
