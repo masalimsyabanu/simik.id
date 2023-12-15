@@ -7,6 +7,12 @@
       "slug": "pages-home"
     },
     {
+      "url": "/dashboard/blog",
+      "icon": "menu-icon tf-icons ti ti-article",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
       "url": "/dashboard/users",
       "icon": "menu-icon tf-icons ti ti-users",
       "name": "Users Management",
@@ -35,12 +41,6 @@
       "icon": "menu-icon tf-icons ti ti-user",
       "name": "Data Murid",
       "slug": "data-murid"
-    },
-    {
-      "url": "/dashboard/blog",
-      "icon": "menu-icon tf-icons ti ti-article",
-      "name": "Blog",
-      "slug": "blog"
     },
     {
       "name": "Konten Website",
@@ -85,6 +85,20 @@
       "icon": "menu-icon tf-icons ti ti-alert-triangle",
       "slug": "profil-website",
       "target": "_blank"
+    }
+  ],
+  "menuGuest": [
+    {
+      "url": "/dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "pages-home"
+    },
+    {
+      "url": "/dashboard/blog",
+      "icon": "menu-icon tf-icons ti ti-article",
+      "name": "Pendaftaran Tahap kedua",
+      "slug": "pendaftaran-tahap-kedua"
     }
   ]
 }

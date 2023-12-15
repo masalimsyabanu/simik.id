@@ -31,7 +31,8 @@ Route::get('/informasi', [HomeController::class, 'informasi'])->name('home.infor
 Route::get('/daftar', [PendaftaranController::class, 'index'])->name('home.daftar');
 Route::post('/daftar', [PendaftaranController::class, 'store'])->name('home.daftar.store');
 
-Route::prefix('dashboard')->name('dashboard.')->namespace('Dashboard')->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->prefix('dashboard')->
+name('dashboard.')->namespace('Dashboard')->group(function () {
     // Main Page Route
     Route::get('/', [HomePage::class, 'index'])->name('pages-home');
     Route::get('/page-2', [Page2::class, 'index'])->name('pages-page-2');

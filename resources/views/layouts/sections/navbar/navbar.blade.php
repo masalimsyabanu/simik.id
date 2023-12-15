@@ -85,7 +85,7 @@ $navbarDetached = ($navbarDetached ?? '');
                     <div class="flex-grow-1">
                       <span class="fw-medium d-block">
                         @if (Auth::check())
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->nama }}
                         @else
                         John Doe
                         @endif
@@ -128,7 +128,7 @@ $navbarDetached = ($navbarDetached ?? '');
               <li>
                 <h6 class="dropdown-header">Manage Team</h6>
               </li>
-              <li>
+              {{-- <li>
                 <div class="dropdown-divider"></div>
               </li>
               <li>
@@ -136,16 +136,16 @@ $navbarDetached = ($navbarDetached ?? '');
                   <i class='ti ti-settings me-2'></i>
                   <span class="align-middle">Team Settings</span>
                 </a>
-              </li>
-              @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+              </li> --}}
+              {{-- @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
               <li>
                 <a class="dropdown-item" href="{{ route('teams.create') }}">
                   <i class='ti ti-user me-2'></i>
                   <span class="align-middle">Create New Team</span>
                 </a>
               </li>
-              @endcan
-              @if (Auth::user()->allTeams()->count() > 1)
+              @endcan --}}
+              {{-- @if (Auth::user()->allTeams()->count() > 1)
               <li>
                 <div class="dropdown-divider"></div>
               </li>
@@ -155,7 +155,7 @@ $navbarDetached = ($navbarDetached ?? '');
               <li>
                 <div class="dropdown-divider"></div>
               </li>
-              @endif
+              @endif --}}
               @if (Auth::user())
               @foreach (Auth::user()->allTeams() as $team)
               {{-- Below commented code read by artisan command while installing jetstream. !! Do not remove if you want to use jetstream. --}}
