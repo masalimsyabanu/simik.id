@@ -47,7 +47,7 @@ $configData = Helper::appClasses();
             <td>
               {{-- <a href="{{route('dashboard.user.edit', $calon_murid->id)}}" class="btn btn-sm btn-success">Edit</a> --}}
               {{-- <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$calon_murid->id}}"> Hapus</button> --}}
-              <input type="text" class="form-control" value="/dashboard/daftar-tahap-kedua/{{$calon_murid->id}}" id="myInput">
+              <input type="text" class="form-control" value="https://simik.id/dashboard/daftar-tahap-kedua/{{$calon_murid->id}}" id="myInput{{$calon_murid->id}}">
               <button class="btn btn-sm btn-secondary" type="button" onclick="myFunction()">Copy link</button>
 
               <!-- Modal -->
@@ -74,6 +74,24 @@ $configData = Helper::appClasses();
           </div>
             </td>
           </tr>
+
+          <script>
+            function myFunction() {
+          // Get the text field
+          var copyText = document.getElementById("myInput{{$calon_murid->id}}");
+
+          // Select the text field
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); // For mobile devices
+
+           // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText.value);
+
+          // Alert the copied text
+          alert("Copied the text: " + copyText.value);
+        }
+          </script>
+
           @endforeach
         </tbody>
       </table>
@@ -83,7 +101,7 @@ $configData = Helper::appClasses();
 
 @endsection
 
-@section('page-script')
+{{-- @section('page-script')
   <script>
     function myFunction() {
   // Get the text field
@@ -100,4 +118,4 @@ $configData = Helper::appClasses();
   alert("Copied the text: " + copyText.value);
 }
   </script>
-@endsection
+@endsection --}}
