@@ -55,6 +55,7 @@ Contact Area
                       <div class="col-md-6 form-group">
                           <label>Tanggal Lahir Anak <span class="required">(Wajib Diisi)</span></label>
                           <input type="date" class="@error('tgl_lahir_anak') {{'is-invalid'}} @enderror" name="tgl_lahir_anak">
+                          <small>Format isi : dd/mm/yyyy</small>
                           @error('tgl_lahir_anak')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -91,7 +92,7 @@ Contact Area
                       <div class="col-md-6 form-group">
                           <label>No WA</label><span class="required">(Wajib Diisi)</span></label>
                           <input type="number" name="nomor_hp" class="@error('nomor_hp') {{'is-invalid'}} @enderror">
-                          {{-- <small>*Cth : 628227311xxx</small> --}}
+                          <small>*Cth : 628227311xxx</small>
                           @error('nomor_hp')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
