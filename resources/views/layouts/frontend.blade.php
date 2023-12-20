@@ -7,8 +7,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Sekolah Islam Maktab Ibnu Khaldu</title>
     <meta name="author" content="Sekolah Islam Maktab Ibnu Khaldu">
-    <meta name="description" content="Website Resmi Sekolah Islam Maktab Ibnu Khaldu">
-    <meta name="keywords" content="Sekolah Islam Maktab Ibnu Khaldu">
+    <meta name="description" content="Website Resmi Sekolah Islam Maktab Ibnu Khaldun">
+    <meta name="keywords" content="Sekolah Islam, Sekolah Islam Indonesia, Maktab Ibnu Khaldun, Sekolah Islam Maktab Ibnu Khaldu">
     <meta name="robots" content="INDEX,FOLLOW">
 
 
@@ -58,7 +58,7 @@
 
 
     <!--********************************
-   		Code Start From Here 
+   		Code Start From Here
 	******************************** -->
 
     <!--==============================
@@ -89,14 +89,14 @@
         Header Area
     ==============================-->
     @include('layouts.frontend.header')
-    
-    
+
+
     <!--==============================
-        Content Area    
+        Content Area
     ==============================-->
-    
+
     @yield('content')
-    
+
     <!--==============================
 			Footer Area
 	==============================-->
@@ -104,7 +104,7 @@
     <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
 
     <!--********************************
-			Code End  Here 
+			Code End  Here
 	******************************** -->
 
     <!--==============================

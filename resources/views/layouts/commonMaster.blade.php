@@ -16,8 +16,10 @@ $contentLayout = (isset($container) ? (($container === 'container-xxl') ? "layou
     {{ config('variables.templateName') ? config('variables.templateName') : 'TemplateName' }} -
     {{ config('variables.templateSuffix') ? config('variables.templateSuffix') : 'TemplateSuffix' }}
   </title>
-  <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" />
-  <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}">
+  {{-- <meta name="description" content="{{ config('variables.templateDescription') ? config('variables.templateDescription') : '' }}" /> --}}
+  <meta name="description" content="{{ @yield('description', 'Website Resmi Sekolah Maktab Ibnu Khaldun') }}" />
+  {{-- <meta name="keywords" content="{{ config('variables.templateKeyword') ? config('variables.templateKeyword') : '' }}"> --}}
+  <meta name="keywords" content="{{ @yield('keyword', 'Sekolah Islam, Maktab Ibnu Khaldun, Sekolah Islam Indonesia, Sekolah Bahasa Arab') }}">
   <!-- laravel CRUD token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Canonical SEO -->
