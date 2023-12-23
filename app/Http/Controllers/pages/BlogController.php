@@ -97,7 +97,7 @@ class BlogController extends Controller
     }
 
     return redirect()
-      ->route('content.pages.blog.index')
+      ->route('dashboard.blog')
       ->with('messages', __('pesan.create', ['module' => $request->input('judul')]));
   }
 

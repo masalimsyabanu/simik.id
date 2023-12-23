@@ -95,7 +95,7 @@ $configData = Helper::appClasses();
       <div class="card mb-4">
         <h5 class="card-header">Konten</h5>
         <div class="card-body">
-              <textarea id="summernote" name="konten"> </textarea>
+              <textarea id="summernote" name="konten">{{$blog->konten ?? ''}}</textarea>
             <hr>
             <button type="button" onclick="window.history.back()"  class="btn-sm btn btn-secondary">Kembali</button>
             <button type="submit" class="btn btn-sm btn-success">{{$button}}</button>

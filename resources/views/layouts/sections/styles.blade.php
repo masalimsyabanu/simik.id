@@ -20,6 +20,13 @@
 {{-- <link rel="stylesheet" href="{{ asset(mix('assets/vendor/libs/quill/editor.css')) }}" /> --}}
 
 
+<!-- Vendor Styles -->
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css'))}}" />
+<link rel="stylesheet" href="{{asset(mix('assets/vendor/libs/apex-charts/apex-charts.css'))}}" />
+
+
 
 <!-- Vendor Styles -->
 @yield('vendor-style')
