@@ -78,8 +78,8 @@ $configData = Helper::appClasses();
           <div>
             <label for="status" class="form-label">Status</label>
             <select name="status" id="status" class="form-control @error('status') {{'is-invalid'}} @enderror" value="{{ old('status') ?? $blog->status ?? ''}}">
-                <option @if(isset($blog->status) == 'aktif') {{'selected'}} @endif value="aktif">Aktif</option>
-                <option @if(isset($blog->status) == 'nonaktif') {{'selected'}}  @endif value="nonaktif">Nonaktif</option>
+                <option @if(isset($blog->status)) @if($blog->status == 'aktif')  {{'selected'}} @endif @endif value="aktif">Aktif</option>
+                <option @if(isset($blog->status)) @if($blog->status == 'nonaktif'){{'selected'}}  @endif @endif value="nonaktif">Nonaktif</option>
             </select>
             @error('status')
                 <span class="text-danger">
@@ -118,7 +118,7 @@ $configData = Helper::appClasses();
   $('#summernote').summernote({
     placeholder: 'Isi Konten Blog Disini',
     tabsize: 2,
-    height: 200
+    height: 400
   });
 </script>
 @endsection

@@ -14,14 +14,14 @@ $configData = Helper::appClasses();
 @section('content')
 
 <h4 class="py-3 mb-4">
-    <span class="text-muted fw-light">Tables /</span> Basic Tables
+    <span class="text-muted fw-light">Blog /</span> Data Blog
   </h4>
 
   <!-- Basic Bootstrap Table -->
   <div class="card">
     {{-- <button class="dt-button create-new btn btn-primary"><span><span class="d-none d-sm-inline-block"></span></span></button> --}}
 
-    <h5 class="card-header">Table Basic</h5>
+    <h5 class="card-header">Tabel Data Blog</h5>
 
     <div class="table-responsive text-nowrap">
         <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>

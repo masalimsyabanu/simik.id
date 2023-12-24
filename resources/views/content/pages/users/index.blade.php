@@ -38,6 +38,7 @@ $configData = Helper::appClasses();
         </thead>
         <tbody class="table-border-bottom-0">
           @foreach($daftar_user as $user)
+
           <tr>
           <td>{{$user->nama}}</td>
           <td>{{$user->username}}</td>
@@ -49,6 +50,7 @@ $configData = Helper::appClasses();
           <td>
               <span class="status--process">{{ucfirst($user->status)}}</span>
           </td>
+          @if(Auth::user()->id != $user->id)
             <td>
               <a href="{{route('dashboard.user.edit', $user->id)}}" class="btn btn-sm btn-success">Edit</a>
               <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$user->id}}">
@@ -78,7 +80,9 @@ $configData = Helper::appClasses();
             </div>
           </div>
             </td>
+            @endif
           </tr>
+
           @endforeach
         </tbody>
       </table>

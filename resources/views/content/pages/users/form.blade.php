@@ -74,7 +74,7 @@ $configData = Helper::appClasses();
           <div class="form-password-toggle">
             <label for="" class="form-label">Password</label>
             <div class="input-group">
-              <input type="password" name="password" value="{{$user->password ?? ''}}" class="form-control @error('password') {{'is-invalid'}} @enderror" id="basic-default-password32" placeholder="············" aria-describedby="basic-default-password">
+              <input type="password" name="password" class="form-control @error('password') {{'is-invalid'}} @enderror" id="basic-default-password32" placeholder="@if($button = 'Update') {{'Ketik jika ingin ubah password'}} @else {{'Masukkan password'}} @endif" aria-describedby="basic-default-password">
               <span class="input-group-text cursor-pointer" id="basic-default-password"><i class="ti ti-eye-off"></i></span>
 
           </div>
@@ -87,11 +87,11 @@ $configData = Helper::appClasses();
 
           <div>
             <label for="status" class="form-label">Role</label>
-            <select name="roles" id="roles" class="form-control @error('roles') {{'is-invalid'}} @enderror" value="{{ old('roles') ?? $user->roles ?? ''}}">
-                <option @if(isset($user->roles) == 'guest') {{'selected'}} @endif value="guest">Guest</option>
-                <option @if(isset($user->roles) == 'editor') {{'selected'}}  @endif value="editor">Editor</option>
-                <option @if(isset($user->roles) == 'guru') {{'selected'}}  @endif value="guru">Guru</option>
-                <option @if(isset($user->roles) == 'admin') {{'selected'}}  @endif value="admin">Admin</option>
+            <select name="roles" id="roles" class="form-control @error('roles') {{'is-invalid'}} @enderror">
+                <option @if(isset($user->roles)) @if($user->roles == 'guest') {{'selected'}} @endif @endif value="guest">Guest</option>
+                <option @if(isset($user->roles)) @if($user->roles == 'editor') {{'selected'}} @endif @endif value="editor">Editor</option>
+                <option @if(isset($user->roles)) @if($user->roles == 'guru') {{'selected'}}  @endif @endif value="guru">Guru</option>
+                <option @if(isset($user->roles)) @if($user->roles == 'admin') {{'selected'}}  @endif @endif value="admin">Admin</option>
             </select>
             @error('roles')
                 <span class="text-danger">
@@ -103,9 +103,9 @@ $configData = Helper::appClasses();
 
           <div>
             <label for="status" class="form-label">Status</label>
-            <select name="status" id="status" class="form-control @error('status') {{'is-invalid'}} @enderror" value="{{ old('status') ?? $user->status ?? ''}}">
-                <option @if(isset($user->status) == 'aktif') {{'selected'}} @endif value="aktif">Aktif</option>
-                <option @if(isset($user->status) == 'nonaktif') {{'selected'}}  @endif value="nonaktif">Nonaktif</option>
+            <select name="status" id="status" class="form-control @error('status') {{'is-invalid'}} @enderror">
+                <option @if(isset($user->status)) @if($user->status == 'aktif') {{'selected'}} @endif @endif value="aktif">Aktif</option>
+                <option @if(isset($user->status)) @if($user->status == 'nonaktif') {{'selected'}}  @endif @endif value="nonaktif">Nonaktif</option>
             </select>
             @error('status')
                 <span class="text-danger">

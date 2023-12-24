@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $rules = [
           'nama' => 'required',
-          'email' => 'required|unique:users',
+          'email' => 'required|unique:users,email',
           'password' => 'required',
           'username' => 'required'
         ];
@@ -82,7 +82,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
       $button = 'Update';
-      $url  = 'dashboard.users.update';
+      $url  = 'dashboard.user.update';
 
       return view('content.pages.users.form', compact('button', 'url', 'user'));
     }
@@ -90,16 +90,52 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+      $input = $request->all();
+
+      $rules = [
+        'nama' => 'required',
+        'email' => 'required|unique:users,email,'.$user->id,
+        'username' => 'required'
+      ];
+
+      $messages =[
+        'nama.required' => 'Harus diisi',
+        'email.required' => 'Harus diisi',
+        'email.unique' => 'Email sudah dipakai',
+        'username.required' => 'Harus diisi'
+      ];
+
+      $validator = Validator::make($input, $rules, $messages)->validate();
+
+      $user->nama = $request->nama;
+      $user->email = $request->email;
+      $user->username = $request->username;
+      $user->status = $request->status;
+
+      if($request->has('password') && $request->password != '') {
+        $user->password = Hash::make($request->password);
+      }
+
+      $user->save();
+
+      return redirect()->route('dashboard.user')
+      ->with('messages', __('pesan.update', ['module' => $request->input('name')]));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+       try {
+          $user->delete();
+       }catch(Exception $e) {
+          return redirect()->route('dashboard.user')
+        ->with('messages', __('pesan.delete', ['module' => $request->input('name')]));
+       }
+          return redirect()->route('dashboard.user')
+          ->with('messages', __('pesan.delete', ['module' => $request->input('name')]));
     }
 }
