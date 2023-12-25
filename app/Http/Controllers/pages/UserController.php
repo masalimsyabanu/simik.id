@@ -133,9 +133,9 @@ class UserController extends Controller
           $user->delete();
        }catch(Exception $e) {
           return redirect()->route('dashboard.user')
-        ->with('messages', __('pesan.delete', ['module' => $request->input('name')]));
+        ->with('messages', __('pesan.delete', ['module' => $user->nama]));
        }
           return redirect()->route('dashboard.user')
-          ->with('messages', __('pesan.delete', ['module' => $request->input('name')]));
+          ->with('messages', __('pesan.delete', ['module' => $user->nama]));
     }
 }

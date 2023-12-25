@@ -24,7 +24,8 @@ $configData = Helper::appClasses();
     <h5 class="card-header">Tabel Data Blog</h5>
 
     <div class="table-responsive text-nowrap">
-        <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>
+        <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-2"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>
+        <a href="{{route('dashboard.category')}}" class="btn btn-secondary"> Kategori Blog</a>
       <table class="table">
         <thead>
           <tr>

@@ -6,6 +6,7 @@ use App\Http\Controllers\pages\HomePage;
 use App\Http\Controllers\pages\Page2;
 use App\Http\Controllers\pages\MiscError;
 use App\Http\Controllers\pages\BlogController;
+use App\Http\Controllers\pages\CategoryBlogController;
 use App\Http\Controllers\pages\UserController;
 use App\Http\Controllers\pages\CalonMuridController;
 use App\Http\Controllers\authentications\LoginBasic;
@@ -53,6 +54,13 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
     Route::get('/blog/{blog}', [BlogController::class, 'edit'])->name('blog.edit');
     Route::put('/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
     Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete');
+
+    Route::get('/category', [CategoryBlogController::class, 'index'])->name('category');
+    Route::get('/category/tambah', [CategoryBlogController::class, 'create'])->name('category.create');
+    Route::post('/category', [CategoryBlogController::class, 'store'])->name('category.store');
+    Route::get('/category/{kategori}', [CategoryBlogController::class, 'edit'])->name('category.edit');
+    Route::put('/category/{kategori}', [CategoryBlogController::class, 'update'])->name('category.update');
+    Route::delete('/category/{kategori}', [CategoryBlogController::class, 'destroy'])->name('category.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('user');
     Route::get('/users/tambah', [UserController::class, 'create'])->name('user.create');
