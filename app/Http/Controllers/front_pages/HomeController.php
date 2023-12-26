@@ -4,6 +4,12 @@ namespace App\Http\Controllers\front_pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Slider;
+use App\Models\Blog;
+use App\Models\User;
+use Str;
+use Image;
 
 class HomeController extends Controller
 {
@@ -12,9 +18,12 @@ class HomeController extends Controller
    */
   public function index()
   {
-    // return view('content.front-pages.index');
+    $daftar_slider = Slider::get();
+    $daftar_blog = Blog::get();
 
-    return redirect()->route('home.informasi');
+    return view('content.front-pages.index', compact('daftar_slider', 'daftar_blog'));
+
+    // return redirect()->route('home.informasi');
   }
 
   public function terimaKasih(){

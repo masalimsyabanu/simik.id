@@ -42,7 +42,7 @@ $configData = Helper::appClasses();
           @foreach($daftar_blog as $blog)
           <tr>
             <td>
-              <img src="{{Storage::url($blog->thumbnail)}}" alt="">
+              <img src="{{Storage::url($blog->foto)}}" alt="">
           </td>
           <td>{{$blog->judul}}</td>
           <td>{{$blog->created_at}}</td>
