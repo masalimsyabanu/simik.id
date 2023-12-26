@@ -180,6 +180,7 @@ class BlogController extends Controller
     }
 
     $blog->save();
+
     return redirect()
       ->route('content.pages.blog.index')
       ->with('messages', __('pesan.update', ['module' => $request->input('judul')]));
@@ -192,9 +193,14 @@ class BlogController extends Controller
   {
     $title = $blog->judul;
 
-    $blog->delete();
-    // $blog->dd();
-
+    try{
+      $blog->delete();
+    }catch(Exception $e)
+    {
+      return redirect()
+      ->route('dashboard.blog')
+      ->with('messages', __('pesan.delete', ['module' => $title]));
+    }
     return redirect()
       ->route('dashboard.blog')
       ->with('messages', __('pesan.delete', ['module' => $title]));

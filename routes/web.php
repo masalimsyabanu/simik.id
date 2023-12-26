@@ -9,6 +9,7 @@ use App\Http\Controllers\pages\BlogController;
 use App\Http\Controllers\pages\CategoryBlogController;
 use App\Http\Controllers\pages\UserController;
 use App\Http\Controllers\pages\CalonMuridController;
+use App\Http\Controllers\pages\SliderController;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 
@@ -68,6 +69,13 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
     Route::get('/users/{user}', [UserController::class, 'edit'])->name('user.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('user.delete');
+
+    Route::get('/slider', [SliderController::class, 'index'])->name('slider');
+    Route::get('/slider/tambah', [SliderController::class, 'create'])->name('slider.create');
+    Route::post('/slider', [SliderController::class, 'store'])->name('slider.store');
+    Route::get('/slider/{slider}', [SliderController::class, 'edit'])->name('slider.edit');
+    Route::put('/slider/{slider}', [SliderController::class, 'update'])->name('slider.update');
+    Route::delete('/slider/{slider}', [SliderController::class, 'destroy'])->name('slider.delete');
 
     Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
     // Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');

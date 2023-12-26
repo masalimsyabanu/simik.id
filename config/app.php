@@ -163,6 +163,7 @@ return [
     /*
          * Application Service Providers...
          */
+    // Intervention\Image\ImageServiceProvider::class,
     App\Providers\AppServiceProvider::class,
     App\Providers\AuthServiceProvider::class,
     // App\Providers\BroadcastServiceProvider::class,
@@ -171,6 +172,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
     App\Providers\MenuServiceProvider::class,
+
   ])->toArray(),
 
   /*
@@ -187,6 +189,7 @@ return [
   'aliases' => Facade::defaultAliases()->merge([
     // 'Example' => App\Facades\Example::class,
     'Helper' => App\Helpers\Helpers::class,
+    // 'Image' => Intervention\Image\Facades\Image::class
   ])->toArray(),
 
 ];

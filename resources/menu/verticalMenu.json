@@ -48,22 +48,9 @@
       "slug": "front-pages",
       "submenu": [
         {
-          "url": "front-pages/landing",
+          "url": "/dashboard/slider",
           "name": "Slider",
-          "slug": "front-pages-landing",
-          "target": "_blank"
-        },
-        {
-          "url": "front-pages/pricing",
-          "name": "Visi Misi",
-          "slug": "front-pages-pricing",
-          "target": "_blank"
-        },
-        {
-          "url": "front-pages/payment",
-          "name": "Ekstrakulikuler",
-          "slug": "front-pages-payment",
-          "target": "_blank"
+          "slug": "front-pages-landing"
         },
         {
           "url": "front-pages/checkout",
