@@ -50,7 +50,7 @@ $configData = Helper::appClasses();
               <span class="block-email">lori@example.com</span>
           </td> --}}
           <td>{{$blog->penulis}}</td>
-          <td class="desc">Samsung S8 Black</td>
+          <td class="desc">{{$blog->kategori->nama}}</td>
           <td>
               <span class="status--process">{{$blog->status}}</span>
           </td>

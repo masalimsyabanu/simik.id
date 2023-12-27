@@ -12,4 +12,9 @@ class Blog extends Model
   protected $table = 'blog';
 
   protected $guarded = [];
+
+  public function kategori()
+  {
+    return $this->belongsTo('App\Models\KategoriBlog', 'kategori_id')->withDefault();
+  }
 }

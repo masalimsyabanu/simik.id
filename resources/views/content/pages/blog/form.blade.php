@@ -76,6 +76,22 @@ $configData = Helper::appClasses();
           </div>
 
           <div>
+            <label for="kategori_id" class="form-label">Kategori</label>
+            <select name="kategori_id" id="kategori_id" class="form-control @error('kategori_id') {{'is-invalid'}} @enderror" value="{{ old('kategori_id') ?? $blog->kategori_id ?? ''}}">
+              @foreach($daftar_kategori as $kategori)
+                <option @if(isset($kategori->id)) @if($kategori->id == $blog->kategori_id)  {{'selected'}} @endif @endif value="{{$kategori->id}}">{{$kategori->nama}}</option>
+              @endforeach
+
+              </select>
+
+            @error('kategori_id')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+
+          <div>
             <label for="status" class="form-label">Status</label>
             <select name="status" id="status" class="form-control @error('status') {{'is-invalid'}} @enderror" value="{{ old('status') ?? $blog->status ?? ''}}">
                 <option @if(isset($blog->status)) @if($blog->status == 'aktif')  {{'selected'}} @endif @endif value="aktif">Aktif</option>

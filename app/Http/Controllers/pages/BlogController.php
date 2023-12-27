@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\KategoriBlog;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 use Image;
@@ -28,11 +29,13 @@ class BlogController extends Controller
    */
   public function create(Blog $blog)
   {
+    $daftar_kategori = KategoriBlog::get();
+
     $button = 'Simpan';
 
     $url = 'dashboard.blog.store';
 
-    return view('content.pages.blog.form', compact('button', 'url'));
+    return view('content.pages.blog.form', compact('button', 'url', 'daftar_kategori'));
   }
 
   /**
@@ -113,10 +116,11 @@ class BlogController extends Controller
    */
   public function edit(Blog $blog)
   {
+    $daftar_kategori = KategoriBlog::get();
     $button = 'Update';
     $url = 'dashboard.blog.update';
 
-    return view('content.pages.blog.form', compact('button', 'url', 'blog'));
+    return view('content.pages.blog.form', compact('button', 'url', 'blog', 'daftar_kategori'));
   }
 
   /**
@@ -171,7 +175,7 @@ class BlogController extends Controller
       // $img->fit(600, 600, function ($cons) {
       //     $cons->aspectRatio();
       //   })->save($destinationPath . $blog->thumbnail);
-      
+
       if($foto_lama != '') {
         Storage::disk('public')->delete($foto_lama);
       }
