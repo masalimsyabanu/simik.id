@@ -48,7 +48,7 @@ Hero Area
           </h1> --}}
           <p style="font-size:34px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; font-family:'Jost', sans-serif;; color:#ffffff; left:150px; top:477px; -webkit-background-clip:border-box;" class="ls-l ls-hide-desktop ls-hide-phone ls-text-layer" data-ls="offsetxin:-100; delayin:800; easingin:easeOutQuint;">{{$slider->deskripsi}} </p>
           {{-- <p style="stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; font-family:'Jost', sans-serif;; color:#ffffff; left:150px; top:538px; font-size:34px; -webkit-background-clip:border-box;" class="ls-l ls-hide-desktop ls-hide-phone ls-text-layer" data-ls="offsetxin:-100; delayin:900; easingin:easeOutQuint;">laboriosam error nulla aut.</p> --}}
-          
+
           <div style="font-size:30px; color:#000; stroke:#000; stroke-width:0px; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; left:150px; top:630px; font-family:'Fredoka', sans-serif; -webkit-background-clip:border-box;" class="ls-l ls-hide-desktop ls-hide-phone ls-html-layer" data-ls="offsetyin:100; delayin:1000; easingin:easeOutQuint; offsetyout:100; easingout:easeOutQuint;"><a href="{{$slider->url}}" class="vs-btn">Lihat Selengkapnya</a></div>
           <h1 style="stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; color:#ffffff; font-family:'Fredoka', sans-serif; line-height:110px; font-weight:600; left:100px; top:90px; font-size:110px; -webkit-background-clip:border-box;" class="ls-l ls-hide-desktop ls-hide-tablet ls-text-layer" data-ls="offsetxin:-100; easingin:easeOutQuint;">
             {!!$new_string!!}
@@ -391,7 +391,7 @@ Why Choose Us
     </div>
 </section>
 <!--==============================
-   About Area  
+   About Area
     ==============================-->
     <section class=" space-top space-extra-bottom">
       <div class="container">
@@ -864,9 +864,9 @@ Contact Area
                                             <li>Fotocopy Akte Kelahiran</li>
                                             <li>Pas Foto 3x4 Dua Lembar</li>
                                           </ul>
-                                        </li> 
-                                        <li>Membayar Uang Pendaftaran Rp.400.000,-</li> 
-                                        <li>Mengikuti Ujian Seleksi Murid Baru</li> 
+                                        </li>
+                                        <li>Membayar Uang Pendaftaran Rp.400.000,-</li>
+                                        <li>Mengikuti Ujian Seleksi Murid Baru</li>
                                     </ol>
                                 </div>
                             </div>
@@ -918,7 +918,7 @@ Blog Area
                         <h3 class="blog-title h5"><a href="blog-details.html">{{$blog->judul}}</a></h3>
                         <p class="blog-text">{{$blog->abstrak}}</p>
                     </div>
-                    <a href="blog-details.html" class="blog-btn">Baca Selengkapnya<i class="far fa-angle-right"></i></a>
+                    <a href="{{route('home.blog.detail', $blog->id)}}" class="blog-btn">Baca Selengkapnya<i class="far fa-angle-right"></i></a>
                 </div>
             </div>
             @endforeach
@@ -958,7 +958,7 @@ Instagram Posts
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-auto">
                 <div class="">
                     <div class="gallery-img">
@@ -968,7 +968,7 @@ Instagram Posts
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-auto">
                 <div class="">
                     <div class="gallery-img">

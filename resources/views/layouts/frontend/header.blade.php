@@ -40,7 +40,7 @@
                     <nav class="main-menu menu-style2 d-none d-lg-block">
                         <ul>
                             <li>
-                                <a href="#">Beranda</a>
+                                <a href="{{route('home.index')}}">Beranda</a>
 
                             </li>
                             <li>
@@ -54,12 +54,12 @@
                                     <li><a href="class-details.html">Class Details</a></li>
                                 </ul>
                             </li> --}}
-                            <li class="menu-item-has-children">
-                                <a href="blog.html">Blog</a>
-                                <ul class="sub-menu">
+                            <li>
+                                <a href="{{route('home.blog')}}">Blog</a>
+                                {{-- <ul class="sub-menu">
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
+                                </ul> --}}
                             </li>
 
                             <li>

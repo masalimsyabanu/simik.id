@@ -160,21 +160,21 @@ class BlogController extends Controller
       $path = 'blog/foto/';
       $file_extension = $request->foto->extension();
       $blog->foto = $path . $nama_file . '.' . $file_extension;
-      // $blog->thumbnail = $path . $nama_file . '-thumbnail.' . $file_extension;
+      $blog->thumbnail = $path . $nama_file . '-thumbnail.' . $file_extension;
 
       $gambar = $request->file('foto');
       $destinationPath = storage_path('app/public/');
 
       $img = Image::make($gambar->path());
       $img
-        ->fit(404, 270, function ($cons) {
+        ->fit(1300, 703, function ($cons) {
           $cons->aspectRatio();
         })
         ->save($destinationPath . $blog->foto);
 
-      // $img->fit(600, 600, function ($cons) {
-      //     $cons->aspectRatio();
-      //   })->save($destinationPath . $blog->thumbnail);
+      $img->fit(404, 270, function ($cons) {
+          $cons->aspectRatio();
+        })->save($destinationPath . $blog->thumbnail);
 
       if($foto_lama != '') {
         Storage::disk('public')->delete($foto_lama);

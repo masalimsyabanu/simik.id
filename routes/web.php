@@ -15,6 +15,7 @@ use App\Http\Controllers\authentications\RegisterBasic;
 
 use App\Http\Controllers\front_pages\HomeController;
 use App\Http\Controllers\front_pages\PendaftaranController;
+use App\Http\Controllers\front_pages\FrontBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,9 @@ Route::get('/terima-kasih', [HomeController::class, 'terimaKasih'])->name('home.
 Route::get('/informasi', [HomeController::class, 'informasi'])->name('home.informasi');
 Route::get('/daftar', [PendaftaranController::class, 'index'])->name('home.daftar');
 Route::post('/daftar', [PendaftaranController::class, 'store'])->name('home.daftar.store');
+
+Route::get('/blog', [FrontBlogController::class, 'index'])->name('home.blog');
+Route::get('/blog/{slug}', [FrontBlogController::class, 'show'])->name('home.blog.detail');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->prefix('dashboard')->
 name('dashboard.')->namespace('Dashboard')->group(function () {
