@@ -91,7 +91,7 @@ class ProfilWebsiteController extends Controller
           $gambar = $request->file('logo');
           $destinationPath = storage_path('/app/public/');
 
-          $img->fit(1300, 703, function ($cons) {
+          $img->fit(100, 100, function ($cons) {
               $cons->aspectRatio();
             })
             ->save($destinationPath . $profil->logo);
@@ -173,7 +173,7 @@ class ProfilWebsiteController extends Controller
             $gambar = $request->file('logo');
             $destinationPath = storage_path('/app/public/');
 
-            $img->fit(1300, 703, function ($cons) {
+            $img->fit(100, 100, function ($cons) {
                 $cons->aspectRatio();
               })
               ->save($destinationPath . $profil->logo);

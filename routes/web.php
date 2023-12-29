@@ -11,6 +11,7 @@ use App\Http\Controllers\pages\UserController;
 use App\Http\Controllers\pages\CalonMuridController;
 use App\Http\Controllers\pages\SliderController;
 use App\Http\Controllers\pages\ProfilWebsiteController;
+use App\Http\Controllers\pages\FAQController;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 
@@ -87,6 +88,14 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
     Route::post('/profil-website', [ProfilWebsiteController::class, 'store'])->name('profil-website.store');
     Route::get('/profil-website/{profil}', [ProfilWebsiteController::class, 'edit'])->name('profil-website.edit');
     Route::put('/profil-website/{profil}', [ProfilWebsiteController::class, 'update'])->name('profil-website.update');
+
+
+    Route::get('/faq', [FAQController::class, 'index'])->name('faq');
+    Route::get('/faq/tambah', [FAQController::class, 'create'])->name('faq.create');
+    Route::post('/faq', [FAQController::class, 'store'])->name('faq.store');
+    Route::get('/faq/{faq}', [FAQController::class, 'edit'])->name('faq.edit');
+    Route::put('/faq/{faq}', [FAQController::class, 'update'])->name('faq.update');
+    Route::delete('/faq/{faq}', [FAQController::class, 'destroy'])->name('faq.delete');
 
 
     Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');

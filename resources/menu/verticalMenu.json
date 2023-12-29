@@ -53,6 +53,11 @@
           "slug": "front-pages-landing"
         },
         {
+          "url": "/dashboard/faq",
+          "name": "FAQ",
+          "slug": "front-pages-landing"
+        },
+        {
           "url": "front-pages/checkout",
           "name": "Testimoni",
           "slug": "front-pages-checkout",

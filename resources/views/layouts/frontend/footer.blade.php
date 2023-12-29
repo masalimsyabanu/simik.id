@@ -1,6 +1,6 @@
 <footer class="footer-wrapper footer-layout3">
-    <div class="shape-mockup jump-reverse d-none d-xxxl-block" data-right="0" data-top="0"><img src="frontend/img/shape/f-s-3-1.png" alt=""></div>
-    <div class="shape-mockup jump d-none d-xxxl-block" data-left="0" data-top="-2%"><img src="frontend/img/shape/f-s-3-2.png" alt=""></div>
+    <div class="shape-mockup jump-reverse d-none d-xxxl-block" data-right="0" data-top="0"><img src="{{asset('frontend/img/shape/f-s-3-1.png')}}" alt=""></div>
+    <div class="shape-mockup jump d-none d-xxxl-block" data-left="0" data-top="-2%"><img src="{{asset('frontend/img/shape/f-s-3-2.png')}}" alt=""></div>
     <div class="container">
         <div class="footer-top">
             <div class="row justify-content-center justify-content-lg-between align-items-center gy-4">
@@ -32,7 +32,7 @@
                 <div class="col-lg-4">
                     <div class="widget footer-widget">
                         <div class="widget-about">
-                            <div class="footer-logo"><img src="{{asset('logo/logo-simik.jpg')}}" style="width: 150px" alt="Maktab Ibnu Khaldun"></div>
+                            <div class="footer-logo"><img src="{{asset('logo/logo-simik.jpg')}}" style="width: 100px" alt="Maktab Ibnu Khaldun"></div>
                             <p class="mb-0">Sekolah Islam "Maktab" Setingkat TK-SD Berbahasa Arab Terbaik di Indonesia dengan Biaya Wakaf</p>
                         </div>
                     </div>
