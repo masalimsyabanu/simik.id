@@ -78,22 +78,19 @@ class BlogController extends Controller
       $path = 'blog/foto/';
       $file_extension = $request->foto->extension();
       $blog->foto = $path . $nama_file . '.' . $file_extension;
-      // $blog->thumbnail = $path . $nama_file . '-thumbnail.' . $file_extension;
+      $blog->thumbnail = $path . $nama_file . '-thumbnail.' . $file_extension;
 
       $gambar = $request->file('foto');
       $destinationPath = storage_path('/app/public/');
 
-      $img = Image::make($gambar->path());
-      $img->fit(404, 270, function ($cons) {
+      $img->fit(1300, 703, function ($cons) {
           $cons->aspectRatio();
         })
         ->save($destinationPath . $blog->foto);
 
-      // $img
-      //   ->fit(600, 600, function ($cons) {
-      //     $cons->aspectRatio();
-      //   })
-      //   ->save($destinationPath . $blog->thumbnail);
+      $img->fit(404, 270, function ($cons) {
+          $cons->aspectRatio();
+        })->save($destinationPath . $blog->thumbnail);
 
       $blog->save();
     }
@@ -166,8 +163,7 @@ class BlogController extends Controller
       $destinationPath = storage_path('app/public/');
 
       $img = Image::make($gambar->path());
-      $img
-        ->fit(1300, 703, function ($cons) {
+      $img->fit(1300, 703, function ($cons) {
           $cons->aspectRatio();
         })
         ->save($destinationPath . $blog->foto);
@@ -178,8 +174,8 @@ class BlogController extends Controller
 
       if($foto_lama != '') {
         Storage::disk('public')->delete($foto_lama);
+        Storage::disk('public')->delete($thumbnail_lama);
       }
-      // Storage::disk('public')->delete($thumbnail_lama);
     }
 
     $blog->save();

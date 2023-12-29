@@ -67,11 +67,10 @@
       ]
     },
     {
-      "url": "pages/misc-error",
+      "url": "/dashboard/profil-website",
       "name": "Profil Website",
-      "icon": "menu-icon tf-icons ti ti-alert-triangle",
-      "slug": "profil-website",
-      "target": "_blank"
+      "icon": "menu-icon tf-icons ti ti-settings-filled",
+      "slug": "profil-website"
     }
   ],
   "menuGuest": [

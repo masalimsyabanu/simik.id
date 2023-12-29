@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProfilWebsite extends Model
 {
     use HasFactory;
+
+    protected $table = 'profil_website';
+
+    protected $guarded = [];
 }

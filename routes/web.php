@@ -10,6 +10,7 @@ use App\Http\Controllers\pages\CategoryBlogController;
 use App\Http\Controllers\pages\UserController;
 use App\Http\Controllers\pages\CalonMuridController;
 use App\Http\Controllers\pages\SliderController;
+use App\Http\Controllers\pages\ProfilWebsiteController;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 
@@ -80,6 +81,13 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
     Route::get('/slider/{slider}', [SliderController::class, 'edit'])->name('slider.edit');
     Route::put('/slider/{slider}', [SliderController::class, 'update'])->name('slider.update');
     Route::delete('/slider/{slider}', [SliderController::class, 'destroy'])->name('slider.delete');
+
+    Route::get('/profil-website', [ProfilWebsiteController::class, 'index'])->name('profil-website');
+    Route::get('/profil-website/tambah', [ProfilWebsiteController::class, 'create'])->name('profil-website.create');
+    Route::post('/profil-website', [ProfilWebsiteController::class, 'store'])->name('profil-website.store');
+    Route::get('/profil-website/{profil}', [ProfilWebsiteController::class, 'edit'])->name('profil-website.edit');
+    Route::put('/profil-website/{profil}', [ProfilWebsiteController::class, 'update'])->name('profil-website.update');
+
 
     Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
     // Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');
