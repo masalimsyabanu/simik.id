@@ -12,6 +12,7 @@ use App\Http\Controllers\pages\CalonMuridController;
 use App\Http\Controllers\pages\SliderController;
 use App\Http\Controllers\pages\ProfilWebsiteController;
 use App\Http\Controllers\pages\FAQController;
+use App\Http\Controllers\pages\TestimoniController;
 use App\Http\Controllers\authentications\LoginBasic;
 use App\Http\Controllers\authentications\RegisterBasic;
 
@@ -96,6 +97,13 @@ name('dashboard.')->namespace('Dashboard')->group(function () {
     Route::get('/faq/{faq}', [FAQController::class, 'edit'])->name('faq.edit');
     Route::put('/faq/{faq}', [FAQController::class, 'update'])->name('faq.update');
     Route::delete('/faq/{faq}', [FAQController::class, 'destroy'])->name('faq.delete');
+
+    Route::get('/testimoni', [TestimoniController::class, 'index'])->name('testimoni');
+    Route::get('/testimoni/tambah', [TestimoniController::class, 'create'])->name('testimoni.create');
+    Route::post('/testimoni', [TestimoniController::class, 'store'])->name('testimoni.store');
+    Route::get('/testimoni/{testimoni}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
+    Route::put('/testimoni/{testimoni}', [TestimoniController::class, 'update'])->name('testimoni.update');
+    Route::delete('/testimoni/{testimoni}', [TestimoniController::class, 'destroy'])->name('testimoni.delete');
 
 
     Route::get('/calon-murid', [CalonMuridController::class, 'index'])->name('calon-murid');

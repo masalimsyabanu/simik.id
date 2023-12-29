@@ -58,10 +58,9 @@
           "slug": "front-pages-landing"
         },
         {
-          "url": "front-pages/checkout",
+          "url": "/dashboard/testimoni",
           "name": "Testimoni",
-          "slug": "front-pages-checkout",
-          "target": "_blank"
+          "slug": "front-pages-checkout"
         },
         {
           "url": "front-pages/help-center",
