@@ -98,7 +98,7 @@ $configData = Helper::appClasses();
     <div class="card mb-4">
       <h5 class="card-header">Pas Foto 3x4</h5>
       <div class="card-body">
-        <form action="/pas-foto" class="dropzone needsclick" id="dropzone-basic">
+        <form action="/pas-foto" class="dropzone needsclick" id="pas-foto">
           <div class="dz-message needsclick">
             Upload file pas 3x4 disini
             <span class="note needsclick">(Format file : JPG, JPEG, PNG, WEBP. Maksimal besar file 2MB)</span>
@@ -115,7 +115,7 @@ $configData = Helper::appClasses();
     <div class="card mb-4">
       <h5 class="card-header">Kartu Keluarga</h5>
       <div class="card-body">
-        <form action="/kartu-keluarga" class="dropzone needsclick" id="dropzone-multi">
+        <form action="/kartu-keluarga" class="dropzone needsclick" id="kartu-keluarga">
           <div class="dz-message needsclick">
             Upload file kartu keluarga disini
             <span class="note needsclick">(Format file : JPG, JPEG, PNG, PDF. Maksimal besar file 2MB)</span>
@@ -132,7 +132,7 @@ $configData = Helper::appClasses();
     <div class="card mb-4">
       <h5 class="card-header">Akte Kelahiran</h5>
       <div class="card-body">
-        <form action="/akte-kelahiran" class="dropzone needsclick" id="pas-foto">
+        <form action="/akte-kelahiran" class="dropzone needsclick" id="akte-kelahiran">
           <div class="dz-message needsclick">
             Upload file akte kelahiran disini
             <span class="note needsclick">(Format file : JPG, JPEG, PNG, PDF. Maksimal besar file 2MB)</span>
@@ -155,5 +155,32 @@ $configData = Helper::appClasses();
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/forms-file-upload.js')}}"></script>
+{{-- <script src="{{asset('assets/js/forms-file-upload.js')}}"></script> --}}
+
+<script>
+  // const dropzoneAkteKelahiran = document.querySelector('#akte-kelahiran');
+  new Dropzone('#akte-kelahiran', {
+      // previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+  });
+
+  new Dropzone('#pas-foto', {
+      // previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+  });
+
+  new Dropzone('#kartu-keluarga', {
+      // previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+  });
+</script>
 @endsection

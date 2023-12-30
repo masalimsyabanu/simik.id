@@ -61,16 +61,16 @@
     });
   }
 
-  const dropzoneAkteKelahiran = document.querySelector('#akte-kelahiran');
-  if (dropzoneAkteKelahiran) {
-    const myDropzoneAkteKelahiran = new Dropzone(dropzoneAkteKelahiran, {
-      previewTemplate: previewTemplate,
-      parallelUploads: 1,
-      maxFilesize: 5,
-      addRemoveLinks: true,
-      maxFiles: 1
-    });
-  }
+  // const dropzoneAkteKelahiran = document.querySelector('#akte-kelahiran');
+  // if (dropzoneAkteKelahiran) {
+  //   const myDropzoneAkteKelahiran = new Dropzone(dropzoneAkteKelahiran, {
+  //     previewTemplate: previewTemplate,
+  //     parallelUploads: 1,
+  //     maxFilesize: 5,
+  //     addRemoveLinks: true,
+  //     maxFiles: 1
+  //   });
+  // }
 
   // Multiple Dropzone
   // --------------------------------------------------------------------
