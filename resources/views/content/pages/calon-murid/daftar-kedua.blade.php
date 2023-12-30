@@ -132,7 +132,7 @@ $configData = Helper::appClasses();
     <div class="card mb-4">
       <h5 class="card-header">Akte Kelahiran</h5>
       <div class="card-body">
-        <form action="/akte-kelahiran" class="dropzone needsclick" id="dropzone-basic">
+        <form action="/akte-kelahiran" class="dropzone needsclick" id="pas-foto">
           <div class="dz-message needsclick">
             Upload file akte kelahiran disini
             <span class="note needsclick">(Format file : JPG, JPEG, PNG, PDF. Maksimal besar file 2MB)</span>

@@ -21,9 +21,7 @@ class FrontBlogController extends Controller
 
       $daftar_kategori = KategoriBlog::get();
 
-      $profil = ProfilWebsite::get()->latest()->first();
-
-      return view('content.front-pages.blog', compact('daftar_blog', 'daftar_kategori', 'profil'));
+      return view('content.front-pages.blog', compact('daftar_blog', 'daftar_kategori'));
     }
 
     /**

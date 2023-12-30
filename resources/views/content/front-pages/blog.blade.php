@@ -13,6 +13,7 @@
       <div class="container">
           <div class="row gx-40">
               <div class="col-lg-8">
+                @if(count($daftar_blog) > 0)
                 @foreach($daftar_blog as $blog)
                   <div class="vs-blog blog-single has-post-thumbnail">
                       <div class="blog-img">
@@ -29,6 +30,9 @@
                           <a href="{{route('home.blog.detail', $blog->slug)}}" class="vs-btn style2">Baca Selengkapnya</a>
                       </div>
                   @endforeach
+                  @else
+                  <h4 class="text-center">Blog Kosong</h4>
+                  @endif
                   </div>
 
                   {{-- <div class="vs-blog blog-single">
@@ -69,6 +73,7 @@
                       <div class="widget  ">
                         <h3 class="widget_title">Latest News</h3>
                         <div class="recent-post-wrap">
+                          @if(count($daftar_blog) > 0)
                           @foreach($daftar_blog as $blog)
                             <div class="recent-post">
                                 <div class="media-img">
@@ -83,6 +88,12 @@
                                 </div>
                             </div>
                           @endforeach
+                          @else
+                            <div class="recent-post">
+                              <p class="text-center">Blog Kosong</p>
+                            </div>
+
+                          @endif
                           </div>
                     </div>
                       <div class="widget widget_categories">
@@ -99,28 +110,28 @@
                       <h4 class="widget_title">Photos Gallery</h4>
                       <div class="sidebar-gallery">
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-1.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-1.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/gallery-small-01.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-01.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-2.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-2.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/gallery-small-02.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-02.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-3.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-3.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/gallery-small-03.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-03.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-4.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-4.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/gallery-small-04.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-04.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-5.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-5.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/about-us-02.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/about-us-02.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                           <div class="gallery-thumb">
-                              <img src="{{asset('frontend/img/widget/gal-1-6.jpg')}}" alt="Gallery Image" class="w-100">
-                              <a href="{{asset('frontend/img/widget/gal-1-6.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                              <img src="{{asset('gallery/404770181_326955203610503_6004865518562258046_n.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/404770181_326955203610503_6004865518562258046_n.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
                           </div>
                       </div>
                   </div>
@@ -143,24 +154,12 @@
                                 <h4 class="event-title"><a href="event-details.html" class="text-inherit">Father`s Day Sundaes & Shaving!</a></h4>
                             </div>
                         </div>
-                        <div class="recent-event">
-                            <a href="event-details.html" class="event-date"><span class="month">Dec</span>24</a>
-                            <div class="media-body">
-                                <h4 class="event-title"><a href="event-details.html" class="text-inherit">Father`s Day Sundaes & Shaving!</a></h4>
-                            </div>
-                        </div>
-                        <div class="recent-event">
-                            <a href="event-details.html" class="event-date"><span class="month">Dec</span>24</a>
-                            <div class="media-body">
-                                <h4 class="event-title"><a href="event-details.html" class="text-inherit">Father`s Day Sundaes & Shaving!</a></h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="widget bg-vs-secondary  " data-bg-src="{{asset('frontend/img/bg/widget-bg-1-1.png')}}">
-                  <h4 class="mt-n2 text-white">Join together to make amazing things happen</h4>
-                  <p class="mb-4 pb-1 text-white">Get all the latest information, support and guidance about the cost of living with kindergarten.</p>
-                  <a href="registration.html" class="vs-btn">Start Registration</a>
+                  <h4 class="mt-n2 text-white">Pendaftaran Masih Dibuka !</h4>
+                  <p class="mb-4 pb-1 text-white">Kami masih membuka pendaftaran sampai tanggal 29 Februari 2024.</p>
+                  <a href="{{route('home.daftar')}}" class="vs-btn">Daftarkan Anak Segera</a>
               </div>
                   </aside>
               </div>

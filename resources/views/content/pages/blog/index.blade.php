@@ -26,6 +26,7 @@ $configData = Helper::appClasses();
     <div class="table-responsive text-nowrap">
         <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-2"><i class="ti ti-plus me-sm-1"></i> Tambah Data</a>
         <a href="{{route('dashboard.category')}}" class="btn btn-secondary"> Kategori Blog</a>
+        @if(count($daftar_blog) > 0)
       <table class="table">
         <thead>
           <tr>
@@ -59,7 +60,6 @@ $configData = Helper::appClasses();
               <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$blog->id}}">
                 Hapus
               </button>
-
               <!-- Modal -->
           <div class="modal fade" id="basicModal{{$blog->id}}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -87,6 +87,9 @@ $configData = Helper::appClasses();
           @endforeach
         </tbody>
       </table>
+      @else
+      <h4 class="text-center m-4">Blog Kosong</h4>
+    @endif
     </div>
   </div>
   <!--/ Basic Bootstrap Table -->

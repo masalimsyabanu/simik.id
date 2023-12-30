@@ -184,30 +184,30 @@
                       <div class="widget  ">
                           <h4 class="widget_title">Photos Gallery</h4>
                           <div class="sidebar-gallery">
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-1.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-1.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-2.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-2.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-3.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-3.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-4.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-4.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-5.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-5.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
-                              <div class="gallery-thumb">
-                                  <img src="{{asset('frontend/img/widget/gal-1-6.jpg')}}" alt="Gallery Image" class="w-100">
-                                  <a href="{{asset('frontend/img/widget/gal-1-6.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
-                              </div>
+                            <div class="gallery-thumb">
+                              <img src="{{asset('gallery/gallery-small-01.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-01.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
+                          <div class="gallery-thumb">
+                              <img src="{{asset('gallery/gallery-small-02.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-02.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
+                          <div class="gallery-thumb">
+                              <img src="{{asset('gallery/gallery-small-03.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-03.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
+                          <div class="gallery-thumb">
+                              <img src="{{asset('gallery/gallery-small-04.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/gallery-small-04.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
+                          <div class="gallery-thumb">
+                              <img src="{{asset('gallery/about-us-02.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/about-us-02.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
+                          <div class="gallery-thumb">
+                              <img src="{{asset('gallery/404770181_326955203610503_6004865518562258046_n.jpg')}}" alt="Gallery Image" class="w-100">
+                              <a href="{{asset('gallery/404770181_326955203610503_6004865518562258046_n.jpg')}}" class="popup-image gal-btn"><i class="fal fa-plus"></i></a>
+                          </div>
                           </div>
                       </div>
                       <div class="widget  ">

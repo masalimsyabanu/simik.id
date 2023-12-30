@@ -21,7 +21,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('foto_profil', 2048)->nullable();
-            $table->enum('roles', ['guest','editor','admin','guru'])->default('guest');
+            $table->enum('roles', ['guest','editor','admin','guru', 'wali_murid'])->default('guest');
             $table->enum('status', ['aktif','nonaktif'])->default('aktif');
             $table->timestamps();
         });
