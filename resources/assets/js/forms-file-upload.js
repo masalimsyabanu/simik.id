@@ -39,6 +39,39 @@
     });
   }
 
+  const dropzonePasFoto = document.querySelector('#pas-foto');
+  if (dropzonePasFoto) {
+    const myDropzonePasFoto = new Dropzone(dropzonePasFoto, {
+      previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+    });
+  }
+
+  const dropzoneKartuKeluarga = document.querySelector('#kartu-keluarga');
+  if (dropzoneKartuKeluarga) {
+    const myDropzoneKartuKeluarga = new Dropzone(dropzoneKartuKeluarga, {
+      previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+    });
+  }
+
+  const dropzoneAkteKelahiran = document.querySelector('#akte-kelahiran');
+  if (dropzoneAkteKelahiran) {
+    const myDropzoneAkteKelahiran = new Dropzone(dropzoneAkteKelahiran, {
+      previewTemplate: previewTemplate,
+      parallelUploads: 1,
+      maxFilesize: 5,
+      addRemoveLinks: true,
+      maxFiles: 1
+    });
+  }
+
   // Multiple Dropzone
   // --------------------------------------------------------------------
   const dropzoneMulti = document.querySelector('#dropzone-multi');
