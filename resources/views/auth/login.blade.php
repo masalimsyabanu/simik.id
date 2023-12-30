@@ -52,9 +52,9 @@ $configData = Helper::appClasses();
         <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
           @csrf
           <div class="mb-3">
-            <label for="login-email" class="form-label">Email</label>
-            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="john@example.com" autofocus value="{{ old('email') }}">
-            @error('email')
+            <label for="login-email" class="form-label">Email/Nomor Handphone</label>
+            <input type="text" class="form-control @error('auth') is-invalid @enderror" id="auth" name="auth" placeholder="john@example.com/6282273318016" required autofocus value="{{ old('auth') }}">
+            @error('auth')
             <span class="invalid-feedback" role="alert">
               <span class="fw-medium">{{ $message }}</span>
             </span>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\front_pages;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CalonMurid;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Str;
 use Validator;
 
 
@@ -60,8 +63,22 @@ class PendaftaranController extends Controller
             'alamat' => $request->alamat,
             'tgl_lahir_anak' => $request->tgl_lahir_anak,
             'nomor_hp' => $request->nomor_hp,
+            'email' => $request->email,
           ]
           );
+
+          $password = Str::random(3);
+
+          $user = User::create(
+            [
+              'nama' => $request->nama_orangtua,
+              'username' => $request->nomor_hp,
+              'email' => $request->email,
+              'roles' => 'guest',
+              'password' => Hash::make($password),
+              'real_password' => $password,
+            ]
+            );
 
           return redirect()->route('home.terima-kasih')->with('messages', __('pesan.create', ['module' => $request->input('nama_anak')]));
     }
