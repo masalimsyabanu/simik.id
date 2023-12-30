@@ -9,7 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Str;
 use Validator;
-
+use Auth;
 
 class PendaftaranController extends Controller
 {
@@ -77,10 +77,26 @@ class PendaftaranController extends Controller
               'roles' => 'guest',
               'password' => Hash::make($password),
               'real_password' => $password,
+              'remember' => true,
             ]
             );
 
-          return redirect()->route('home.terima-kasih')->with('messages', __('pesan.create', ['module' => $request->input('nama_anak')]));
+            $remember = $user->remember;
+
+            if(Auth::login($user, $remember = true)){
+
+            }
+
+            $request->session()->regenerate();
+            return redirect()->route('dashboard.calon-murid.tahap-kedua', $calon_murid->id);
+
+            // if(Auth::attempt(['username' => $request->nomor_hp, 'password' => Hash::make($password), 'active' => 1])){
+            //   $request->session()->regenerate();
+
+            //   return redirect()->route('dashboard.calon-murid.tahap-kedua', $calon_murid->id);
+            // }
+
+          // return redirect()->route('home.terima-kasih')->with('messages', __('pesan.create', ['module' => $request->input('nama_anak')]));
     }
 
     /**
