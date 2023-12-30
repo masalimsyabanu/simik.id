@@ -1,3 +1,10 @@
+@php
+
+  use App\Models\ProfilWebsite;
+
+  $profil_website = ProfilWebsite::latest()->first();
+
+@endphp
 
 <!doctype html>
 <html class="no-js" lang="zxx">

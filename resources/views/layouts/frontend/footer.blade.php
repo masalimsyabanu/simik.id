@@ -32,8 +32,14 @@
                 <div class="col-lg-4">
                     <div class="widget footer-widget">
                         <div class="widget-about">
-                            <div class="footer-logo"><img src="{{asset('logo/logo-simik.jpg')}}" style="width: 100px" alt="Maktab Ibnu Khaldun"></div>
-                            <p class="mb-0">Sekolah Islam "Maktab" Setingkat TK-SD Berbahasa Arab Terbaik di Indonesia dengan Biaya Wakaf</p>
+                            <div class="footer-logo">
+                              @if(isset($profil_website->logo))
+                              <img src="{{ Storage::url($profil_website->logo) }}" style="width: 100px" alt="{{$profil_website->deskripsi}}">
+                              @else
+                              <img src="{{ asset('logo/logo-simik.jpg') }}" style="width: 100px" alt="Maktab Ibnu Khaldun">
+                              @endif
+                            </div>
+                            <p class="mb-0">{{ $profil_website->deskripsi ?? 'Sekolah Islam "Maktab" Setingkat TK-SD Berbahasa Arab Terbaik di Indonesia dengan Biaya Wakaf'}}</p>
                         </div>
                     </div>
                 </div>
@@ -41,8 +47,8 @@
                     <div class="widget footer-widget">
                         <h3 class="widget_title">Alamat</h3>
                         <div class="vs-widget-about">
-                            <p class="map-link mb-2 pb-1">Jl. Murai No. 139E Sei Sikambing B, Medan, Sumatera Utara</p>
-                            <p class="footer-call"><a class="text-inherit" href="tel:+6285260061002">+62 8526 0061 002</a></p>
+                            <p class="map-link mb-2 pb-1">{{ $profil_website ??  'Jl. Murai No. 139E Sei Sikambing B, Medan, Sumatera Utara'}}</p>
+                            <p class="footer-call"><a class="text-inherit" href="tel:+{{$profil_website->no_hp ?? '6285260061002'}}">+{{$profil_website->no_hp ?? '62 852 6006 1002'}}</a></p>
                         </div>
                     </div>
                 </div>
@@ -63,14 +69,14 @@
             <div class="row flex-row-reverse gy-3 justify-content-between align-items-center">
                 <div class="col-lg-auto">
                     <div class="vs-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://web.facebook.com/maktab.ibnukhaldun" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/maktab.ibnukhaldun/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        {{-- <a href="#"><i class="fab fa-linkedin-in"></i></a> --}}
+                        <a href="https://www.youtube.com/@simik_tv" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-auto">
-                    <p class="copyright-text text-white">Copyright &copy; 2023 <a href="index.html">Maktab Ibnu Khaldun</a>. All Rights Reserved By <a href="#">#</a></p>
+                    <p class="copyright-text text-white">Copyright &copy; {{date('Y')}} <a href="{{route('home.index')}}">Maktab Ibnu Khaldun</a>. All Rights Reserved By <a href="#">#</a></p>
                 </div>
             </div>
         </div>

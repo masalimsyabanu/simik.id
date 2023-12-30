@@ -5,15 +5,19 @@
                 <div class="col col-sm-auto">
                     <div class="header-logo">
                         <a href="{{route('home.index')}}">
-                            <img src="{{asset('logo/logo-simik.jpg')}}" style="width: 100px" alt="logo">
+                          @if(isset($profil_website->logo))
+                          <img src="{{Storage::url($profil_website->logo)}}" style="width: 100px" alt="logo">
+                          @else
+                          <img src="{{asset('logo/logo-simik.jpg')}}" style="width: 100px" alt="logo">
+                          @endif
                         </a>
                     </div>
                 </div>
                 <div class="col-6 col-sm-auto d-none d-lg-block">
                     <div class="header-links style3 style-white">
                         <ul>
-                            <li class="d-none d-xl-inline-block"><i class="fas fa-envelope"></i>Email: <a href="mailto:nazir@simik.id">nazir@simik.id</a></li>
-                            <li><i class="fas fa-mobile-alt"></i>Kontak : <a href="tel:+6285260061002">+62 852 6006 1002</a></li>
+                            <li class="d-none d-xl-inline-block"><i class="fas fa-envelope"></i>Email: <a href="mailto:{{$profil_website->email ?? 'nazir@simik.id'}}">{{$profil_website->email ?? 'nazir@simik.id'}}</a></li>
+                            <li><i class="fas fa-mobile-alt"></i>Kontak : <a href="tel:+{{$profil_website->no_hp ?? '6285260061002'}}">+{{$profil_website->no_hp ?? '62 852 6006 1002'}}</a></li>
                         </ul>
                     </div>
                 </div>

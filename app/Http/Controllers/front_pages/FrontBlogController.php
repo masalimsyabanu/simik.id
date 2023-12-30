@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\KategoriBlog;
+use App\Models\ProfilWebsite;
 use Storage;
 use Image;
 
@@ -20,7 +21,9 @@ class FrontBlogController extends Controller
 
       $daftar_kategori = KategoriBlog::get();
 
-      return view('content.front-pages.blog', compact('daftar_blog', 'daftar_kategori'));
+      $profil = ProfilWebsite::get()->latest()->first();
+
+      return view('content.front-pages.blog', compact('daftar_blog', 'daftar_kategori', 'profil'));
     }
 
     /**
