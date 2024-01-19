@@ -24,7 +24,7 @@ $configData = Helper::appClasses();
   <div class="row">
     <div class="col-md-12">
       <div class="card mb-4">
-
+        <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data Anak</a>
         <h5 class="card-header">Isi Formulir Berikut</h5>
         <div class="card-body">
           <form action="{{route($url, $calon_murid->id ?? '')}}" method="POST" enctype="multipart/form-data">

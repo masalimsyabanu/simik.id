@@ -46,8 +46,7 @@ class JetstreamServiceProvider extends ServiceProvider
                           ->orWhere('username', $request->auth)
                           ->first();
 
-          if ($user &&
-              Hash::check($request->password, $user->password)) {
+          if ($user && Hash::check($request->password, $user->password)) {
               return $user;
           }
       });
