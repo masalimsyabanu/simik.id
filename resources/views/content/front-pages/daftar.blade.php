@@ -45,7 +45,7 @@ Contact Area
                   <div class="row justify-content-between">
                       <div class="col-md-6 form-group">
                           <label>Nama Lengkap Anak <span class="required">(Wajib Diisi)</span></label>
-                          <input type="text" class="@error('nama_anak') {{'is-invalid'}} @enderror" name="nama_anak">
+                          <input type="text" placeholder="Masukkan nama anak" class="form-control @error('nama_anak') {{'is-invalid'}} @enderror" name="nama_anak">
                           @error('nama_anak')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -54,7 +54,7 @@ Contact Area
                       </div>
                       <div class="col-md-6 form-group">
                           <label>Tanggal Lahir Anak <span class="required">(Wajib Diisi)</span></label>
-                          <input type="date" class="@error('tgl_lahir_anak') {{'is-invalid'}} @enderror" name="tgl_lahir_anak">
+                          <input type="date" class="form-control date-mask @error('tgl_lahir_anak') {{'is-invalid'}} @enderror" placeholder="DD-MM-YYY" name="tgl_lahir_anak">
                           <small>Format isi : dd/mm/yyyy</small>
                           @error('tgl_lahir_anak')
                               <span class="text-danger">
@@ -64,7 +64,7 @@ Contact Area
                       </div>
                       <div class="col-md-6 form-group">
                           <label>Nama Orang Tua <span class="required">(Wajib Diisi)</span></label>
-                          <input type="text" class="@error('nama_orangtua') {{'is-invalid'}} @enderror" name="nama_orangtua">
+                          <input type="text" placeholder="Masukkan nama orang tua" class="@error('nama_orangtua') {{'is-invalid'}} @enderror" name="nama_orangtua">
                           @error('nama_orangtua')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -73,7 +73,7 @@ Contact Area
                       </div>
                       <div class="col-md-6 form-group">
                           <label>Alamat<span class="required">(Wajib Diisi)</span></label>
-                          <input type="text" class="@error('alamat') {{'is-invalid'}} @enderror" name="alamat">
+                          <input type="text" placeholder="Masukkan alamat" class="@error('alamat') {{'is-invalid'}} @enderror" name="alamat">
                           @error('alamat')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -82,7 +82,7 @@ Contact Area
                       </div>
                       <div class="col-md-6 form-group">
                           <label>Email</label>
-                          <input type="email" class="@error('email') {{'is-invalid'}} @enderror" name="email">
+                          <input type="email" placeholder="Masukkan email (opsional)" class="@error('email') {{'is-invalid'}} @enderror" name="email">
                           @error('email')
                               <span class="text-danger">
                                   <strong>{{$message}}</strong>
@@ -91,7 +91,7 @@ Contact Area
                       </div>
                       <div class="col-md-6 form-group">
                           <label>No WA</label><span class="required">(Wajib Diisi)</span></label>
-                          <input type="number" name="nomor_hp" class="@error('nomor_hp') {{'is-invalid'}} @enderror">
+                          <input type="number" placeholder="Masukkan nomor WA aktif" name="nomor_hp" class="@error('nomor_hp') {{'is-invalid'}} @enderror">
                           <small>*Cth : 628227311xxx</small>
                           @error('nomor_hp')
                               <span class="text-danger">
