@@ -18,13 +18,13 @@ $configData = Helper::appClasses();
 @section('content')
 
 <h4 class="py-3 mb-4">
-    <span class="text-muted fw-light">Pendaftaran Tahap Kedua</span>
+    <span class="text-muted fw-light">Lengkapi Lampiran Data Anak</span>
   </h4>
 
   <div class="row">
     <div class="col-md-12">
+      <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data Anak</a>
       <div class="card mb-4">
-        <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data Anak</a>
         <h5 class="card-header">Isi Formulir Berikut</h5>
         <div class="card-body">
           <form action="{{route($url, $calon_murid->id ?? '')}}" method="POST" enctype="multipart/form-data">
@@ -94,7 +94,55 @@ $configData = Helper::appClasses();
 
   <div class="row">
 
-    <div class="col-12">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <h5 class="card-header">Upload Lampiran File</h5>
+        <div class="card-body">
+          <div class="mt-4">
+            <label for="" class="form-label">Pas Foto 3x4</label>
+            <input type="file" class="form-control @error('pas_foto') {{'is-invalid'}} @enderror" name="pas_foto">
+            <small>Format File : JPG, JPEG, PDF</small>
+            @error('pas_foto')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+          <div class="mt-4">
+            <label for="" class="form-label">Kartu Keluarga</label>
+            <input type="file" class="form-control @error('kartu_keluarga') {{'is-invalid'}} @enderror" name="kartu_keluarga">
+            <small>Format File : JPG, JPEG, PDF</small>
+            @error('kartu_keluarga')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+          <div class="mt-4">
+            <label for="" class="form-label">Akte Kelahiran</label>
+            <input type="file" class="form-control @error('akte_kelahiran') {{'is-invalid'}} @enderror" name="akte_kelahiran">
+            <small>Format File : JPG, JPEG, PDF</small>
+            @error('akte_kelahiran')
+                <span class="text-danger">
+                    <strong>{{$message}}</strong>
+                </span>
+            @enderror
+          </div>
+          <hr>
+          {{-- <button class="btn btn-secondary"></button> --}}
+        <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    {{-- Dropzone File Upload Pas Foto 3x4  --}}
+
+{{-- <div class="col-12">
     <div class="card mb-4">
       <h5 class="card-header">Pas Foto 3x4</h5>
       <div class="card-body">
@@ -109,9 +157,11 @@ $configData = Helper::appClasses();
         </form>
       </div>
     </div>
-  </div>
+</div> --}}
 
-  <div class="col-12">
+  {{-- Dropzone File Upload Kartu Keluarga  --}}
+
+  {{-- <div class="col-12">
     <div class="card mb-4">
       <h5 class="card-header">Kartu Keluarga</h5>
       <div class="card-body">
@@ -126,9 +176,11 @@ $configData = Helper::appClasses();
         </form>
       </div>
     </div>
-  </div>
+  </div> --}}
 
-  <div class="col-12">
+  {{-- Dropzone File Upload Akter Kelahiran  --}}
+
+  {{-- <div class="col-12">
     <div class="card mb-4">
       <h5 class="card-header">Akte Kelahiran</h5>
       <div class="card-body">
@@ -143,7 +195,7 @@ $configData = Helper::appClasses();
         </form>
       </div>
     </div>
-  </div>
+  </div> --}}
 
     </div>
 

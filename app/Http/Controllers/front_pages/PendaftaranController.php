@@ -56,8 +56,23 @@ class PendaftaranController extends Controller
 
         $validator = Validator::make($input, $rules, $messages)->validate();
 
+        $password = Str::random(3);
+
+        $user = User::create(
+          [
+            'nama' => $request->nama_orangtua,
+            'username' => $request->nomor_hp,
+            'email' => $request->email,
+            'roles' => 'guest',
+            'password' => Hash::make($password),
+            'real_password' => $password,
+            // 'remember' => true,
+          ]
+          );
+
         $calon_murid = CalonMurid::create(
           [
+            'user_id' => $user->id,
             'nama_anak' => $request->nama_anak,
             'nama_orangtua' => $request->nama_orangtua,
             'alamat' => $request->alamat,
@@ -66,20 +81,6 @@ class PendaftaranController extends Controller
             'email' => $request->email,
           ]
           );
-
-          $password = Str::random(3);
-
-          $user = User::create(
-            [
-              'nama' => $request->nama_orangtua,
-              'username' => $request->nomor_hp,
-              'email' => $request->email,
-              'roles' => 'guest',
-              'password' => Hash::make($password),
-              'real_password' => $password,
-              'remember' => true,
-            ]
-            );
 
             $remember = $user->remember;
 

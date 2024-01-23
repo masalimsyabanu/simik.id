@@ -79,10 +79,10 @@
   ],
   "menuGuest": [
     {
-      "url": "/dashboard/daftar-tahap-kedua",
+      "url": "/dashboard/calon-murid",
       "icon": "menu-icon tf-icons ti ti-article",
-      "name": "Pendaftaran Tahap kedua",
-      "slug": "pendaftaran-tahap-kedua"
+      "name": "Data Pendaftaran Anak",
+      "slug": "data-pendaftaran-anak"
     }
   ]
 }
