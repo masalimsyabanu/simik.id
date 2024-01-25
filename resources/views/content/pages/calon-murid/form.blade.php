@@ -8,7 +8,7 @@ $configData = Helper::appClasses();
 
 @section('content')
 <h4 class="py-3 mb-4">
-  <span class="text-muted fw-light">Pendaftaran Tahap Kedua</span>
+  <span class="text-muted fw-light">Tambah Data Anak</span>
 </h4>
 
 <div class="row">
@@ -74,6 +74,9 @@ $configData = Helper::appClasses();
                 </span>
             @enderror
           </div>
+
+          <button type="button" onclick="window.history.back()" class="btn btn-secondary">Kembali</button>
+          <button type="submit" class="btn btn-success">Simpan</button>
 
         </form>
 

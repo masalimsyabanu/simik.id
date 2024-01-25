@@ -68,6 +68,14 @@ class CalonMuridController extends Controller
         //
     }
 
+
+    public function lampiranBerkas(CalonMurid $calon_murid){
+      $title = 'Lampiran Berkas Anak';
+      $url = 'dashboard.calon-murid.tahap-kedua.update';
+      $button = 'Simpan';
+      return view('content.pages.calon-murid.lampiran-berkas', compact('calon_murid','button', 'title', 'url'));
+    }
+
     /**
      * Update the specified resource in storage.
      */

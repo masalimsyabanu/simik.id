@@ -17,6 +17,8 @@ $configData = Helper::appClasses();
     <span class="text-muted fw-light">Calon Murid</span>
   </h4>
 
+  <a href="{{route('dashboard.blog.create')}}" class="btn btn-primary m-3"><i class="ti ti-plus me-sm-1"></i> Tambah Data Anak</a>
+
   <!-- Basic Bootstrap Table -->
   <div class="card">
     {{-- <button class="dt-button create-new btn btn-primary"><span><span class="d-none d-sm-inline-block"></span></span></button> --}}
@@ -34,6 +36,8 @@ $configData = Helper::appClasses();
             <th>Nomor WA</th>
             {{-- <th>Status</th> --}}
             <th>Link Tahap Kedua</th>
+            <th>Berkas</th>
+            <th>Pembayaran</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
@@ -45,48 +49,55 @@ $configData = Helper::appClasses();
           <td>{{ucfirst($calon_murid->nomor_hp)}}</td>
 
             <td>
-              {{-- <a href="{{route('dashboard.user.edit', $calon_murid->id)}}" class="btn btn-sm btn-success">Edit</a> --}}
-              {{-- <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#basicModal{{$calon_murid->id}}"> Hapus</button> --}}
               <input type="text" class="form-control" value="https://simik.id/dashboard/daftar-tahap-kedua/{{$calon_murid->id}}" id="myInput{{$calon_murid->id}}">
               <button class="btn btn-sm btn-secondary" type="button" onclick="myFunction{{$calon_murid->id}}()">Copy link</button>
                     <script>
                       function myFunction{{$calon_murid->id}}() {
-                    // Get the text field
+
                     var copyText = document.getElementById("myInput{{$calon_murid->id}}");
 
-                    // Select the text field
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999); // For mobile devices
 
-                    // Copy the text inside the text field
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999);
+
+
                     navigator.clipboard.writeText(copyText.value);
 
-                    // Alert the copied text
+
                     alert("Copied the text: " + copyText.value);
                   }
                     </script>
-              <!-- Modal -->
-          <div class="modal fade" id="basicModal{{$calon_murid->id}}" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel1">Hapus Data</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+              <div class="modal fade" id="basicModal{{$calon_murid->id}}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel1">Hapus Data</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{route('dashboard.user.delete', $calon_murid->id ?? '')}}" method="post">
+                    @csrf
+                    @method('delete')
+                      <div class="modal-body">
+                        Yakin ingin hapus data ini?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Hapus</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <form action="{{route('dashboard.user.delete', $calon_murid->id ?? '')}}" method="post">
-                @csrf
-                @method('delete')
-                  <div class="modal-body">
-                    Yakin ingin hapus data ini?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Hapus</button>
-                  </div>
-                </form>
               </div>
-            </div>
-          </div>
+            </td>
+
+            <td>
+              <a href="{{route('dashboard.calon-murid.lampiran-berkas', $calon_murid->id)}}" class="btn btn-primary">Lampiran Berkas</a>
+            </td>
+            <td>
+
+              <a href="" class="btn btn-success">Pembayaran</a>
             </td>
           </tr>
 
